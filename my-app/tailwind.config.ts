@@ -16,6 +16,18 @@ export default {
         background: "var(--background)",           // Certifique-se de que a variável esteja definida
         foreground: "var(--foreground)",           // Certifique-se de que a variável esteja definida
       },
+      backgroundImage: {
+        'big-flower': "url('/src/media/big_flower.svg')",
+      },
+      keyframes: {
+        "fade-up": {
+          "0%": { opacity: '0', transform: "translateY(20px)" },
+          "100%": { opacity: '1', transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "fade-up": "fade-up 1s ease-out",
+      },
     },
   },
   plugins: [],
