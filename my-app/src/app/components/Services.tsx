@@ -128,7 +128,7 @@ const Services: React.FC = () => {
                                 />
                             </div>
                             <div className="flex-1 pr-[175px] pl-8">
-                                <h3 className="text-[18px] sm:text-[22px] lg:text-[26px] leading-[22.4px] pb-4 font-bold text-black font-redhat truncate">
+                                <h3 className="sm:text-[22px] lg:text-[26px] leading-[22.4px] pb-4 font-bold text-black font-redhat truncate">
                                     {card.title}
                                 </h3>
                                 <p className="text-[#5E5E5E] text-[12px] sm:text-[14px] lg:text-[16px] leading-[1.6] font-redhat font-normal break-words">
