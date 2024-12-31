@@ -51,7 +51,7 @@ const Header: React.FC = () => {
           alt="logo"
           width={216}
           height={82}
-          className="p-[10px] lg:p-[33.35px]"
+          className="p-[33.35px]"
           priority
         />
 
@@ -130,7 +130,7 @@ const Header: React.FC = () => {
               <li
                 key={index}
                 onClick={() => handleScroll(item.id)}
-                className="cursor-pointer group relative pt-4 lg:pt-0"
+                className="cursor-pointer group relative pt-4 lg:pt-0 w-[80px]"
               >
                 <span>{item.name}</span>
                 <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:opacity-0 group-hover:translate-x-full origin-left transition-all duration-300"></span>

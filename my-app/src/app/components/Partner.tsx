@@ -7,13 +7,14 @@ const Partner: React.FC = () => {
       className="w-full min-h-screen bg-[#5E97A8] flex flex-col items-center justify-center px-6 py-10 lg:flex-row lg:gap-60"
     >
       {/* Texto da seção */}
-      <div className="text-center lg:text-left max-w-[387px] w-full mb-8 lg:mb-0">
-        <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] pb-4 sm: px-[30px]">
+      <div className="sm: text-center lg:text-left max-w-[387px] w-full mb-8 lg:mb-0">
+        <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] pb-4">
           Vamos inovar Juntos?
         </h1>
-        <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-white font-redhat lg:pr-[26px] sm: w-[266px] lg:mx-8 sm: mx-[61px]">
+        <p className="text-[13px] leading-[20.8px] text-white font-redhat lg:w-[266px] sm: w-[266px] sm: mx-auto lg:mx-0 lg:text-left">
           Estamos prontos para iniciar a transformação na sua organização. Preencha o formulário para se tornar um cliente ou associado e nossa equipe entrará em contato.
         </p>
+
       </div>
 
       {/* Formulário */}

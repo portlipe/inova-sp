@@ -113,7 +113,7 @@ const Services: React.FC = () => {
             id="servicos"
             className="w-full min-h-screen bg-[#0B2B40] flex flex-col items-center justify-start text-center lg:px-4 pb-32"
         >
-            <div className="mt-32">
+            <div className="lg:mt-32 sm: mt-[70px]">
                 <h1 className="sm:  text-[50px] sm:  leading-[50px] lg:text-[54px] leading-[66px] text-white mb-6 font-rajdhani font-medium">
                     Nossos Serviços
                 </h1>
@@ -123,7 +123,7 @@ const Services: React.FC = () => {
             </div>
 
             {/* Cards */}
-            <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm:  max-w-[370px]">
+            <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm:  max-w-[353px]">
                 {cards.map((card, index) => (
                     <div
                         key={index}
