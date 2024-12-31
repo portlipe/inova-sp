@@ -4,12 +4,12 @@ const Newsletter: React.FC = () => {
     return (
         <section
             id="newsletter"
-            className="w-full h-[460px] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-[180px]"
+            className="w-full h-[460px] flex flex-col justify-center items-center sm: px-6 lg:px-8 lg:my-[180px] sm: my-[93px]"
         >
-            <h1 className="sm: leading-[40px] sm: text-[40px] lg:text-[54px] font-medium text-[#141414] leading-[68.9px] font-rajdhani mb-4 text-center sm: px-[30px]">
+            <h1 className="sm: leading-[40px] sm: text-[40px] lg:text-[54px] font-medium text-[#141414] lg:leading-[68.9px] font-rajdhani mb-4 text-center sm: px-[30px]">
                 Cadastre-se em nossa Newsletter
             </h1>
-            <p className="lg: text-[18px] lg: leading-[30px] sm: text-[13px] sm: leading-[20.8px] text-gray-600 text-center max-w-[600px] mb-6 font-redhat sm: px-[37px]">
+            <p className="lg:text-[18px] lg:leading-[30px] sm: text-[12.8px] sm: leading-[18.8px] sm: w-[307px] font-normal text-[#141414] text-center lg:w-[771px] mb-6 font-redhat">
                 Inscreva-se em nossa newsletter e acompanhe todas as novidades do nosso Instituto e do mercado de inovação e tecnologia.
             </p>
             <div className="flex sm:flex-row items-center w-full sm: flex-col justify-center rounded-sm font-redhat">

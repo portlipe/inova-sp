@@ -11,7 +11,7 @@ const Partner: React.FC = () => {
         <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] pb-4 sm: px-[30px]">
           Vamos inovar Juntos?
         </h1>
-        <p className="lg: text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8] text-white font-redhat lg:pr-[26px] sm: px-[38px]">
+        <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-white font-redhat lg:pr-[26px] sm: w-[266px] sm: mx-[61px]">
           Estamos prontos para iniciar a transformação na sua organização. Preencha o formulário para se tornar um cliente ou associado e nossa equipe entrará em contato.
         </p>
       </div>

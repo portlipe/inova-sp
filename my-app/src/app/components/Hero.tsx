@@ -1,54 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Hero: React.FC = () => {
-  const text = "Impulsionando organizações com Inovação,   Tecnologia e   Gestão   ";
-  const words = text.split(" ");
-  const [visibleWords, setVisibleWords] = useState<string[]>([]);
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    words.forEach((word, index) => {
-      timeout = setTimeout(() => {
-        setVisibleWords((prev) => [...prev, word]);
-      }, index * 200); // Adiciona cada palavra a cada 500ms
-    });
-
-    return () => clearTimeout(timeout);
-  }, [words]);
-
   return (
     <section
       id="hero"
-      className="w-full h-[618px] flex items-center justify-center relative overflow-hidden bg-[#C2C2C2] bg-cover bg-center"
-      style={{
-        backgroundImage: `url('/media/desktop.mp4')`,
-        backgroundAttachment: "fixed",
-      }}
+      className="w-full lg:h-[618px] sm: h-[520px] sm: items-center flex justify-center relative overflow-hidden bg-[#C2C2C2]"
     >
-      {/* Texto com animação */}
-      <div className="flex items-center justify-center w-full h-full">
-        <h1 className="max-w-full w-full text-[32px] sm:text-[52px] lg:text-[70px] lg:leading-[71px] px-[32px] text-white font-rajdhani font-semibold leading-[49.4px] text-center z-10">
-          {words.map((word, index) => (
-            <React.Fragment key={index}>
-              <span
-                className={`inline-block opacity-0 transform translate-y-4 transition-all duration-700 ${
-                  visibleWords.includes(word)
-                    ? "opacity-100 translate-y-0"
-                    : ""
-                }`}
-                style={{ animationDelay: `${index * 0.5}s` }}
-              >
-                {word}
-              </span>
-              {/* Quebra de linha condicional para telas maiores */}
-              {word === "com" && (
-                <span className="hidden lg:block w-full">
-                  <br />
-                </span>
-              )}
-              &nbsp;
-            </React.Fragment>
-          ))}
+      {/* Vídeo de fundo */}
+      <video
+        src="my-app\my-app\src\app\media\desktop.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      />
+
+      {/* Conteúdo do Hero */}
+      <div className="relative z-10">
+        <h1 className="lg:w-[975px] sm: w-[326px] lg:text-[70px] lg:leading-[70px] sm: text-[50px] sm: leading-[62px] text-white font-semibold font-rajdhani lg:text-center lg:pb-[100px]">
+          Impulsionando organizações com Inovação, &nbsp;&nbsp; Tecnologia e &nbsp;&nbsp; Gestão
         </h1>
       </div>
     </section>

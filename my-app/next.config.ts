@@ -1,12 +1,16 @@
-import { NextConfig } from 'next';
+// next.config.ts
+import { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
-  webpack: (config, { isServer }) => {
+const config: NextConfig = {
+  webpack(config) {
     config.module.rules.push({
-      test: /\.(mp4|webm|ogg|swf|ogv)$/,
-      type: 'asset/resource',
-      generator: {
-        filename: 'static/media/[name].[hash][ext]',
+      test: /\.(mp4|webm|ogg)$/i,
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '[name].[hash].[ext]',
+          outputPath: 'static/videos/', // Caminho de saída para os arquivos de vídeo
+        },
       },
     });
 
@@ -14,4 +18,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default config;
