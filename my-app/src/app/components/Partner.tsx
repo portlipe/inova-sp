@@ -11,7 +11,7 @@ const Partner: React.FC = () => {
         <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] pb-4 sm: px-[30px]">
           Vamos inovar Juntos?
         </h1>
-        <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-white font-redhat lg:pr-[26px] sm: w-[266px] sm: mx-[61px]">
+        <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-white font-redhat lg:pr-[26px] sm: w-[266px] lg:mx-8 sm: mx-[61px]">
           Estamos prontos para iniciar a transformação na sua organização. Preencha o formulário para se tornar um cliente ou associado e nossa equipe entrará em contato.
         </p>
       </div>
@@ -99,7 +99,7 @@ const Partner: React.FC = () => {
         {/* Botão */}
         <div
           id="mensagem"
-          className="w-full h-[46px] rounded-sm bg-[#5E97A8] mt-4 lg:mt-[30px] flex items-center justify-center cursor-pointer hover:bg-[#12395a] transition-colors"
+          className="lg:w-[194px] lg:h-[46px] sm: w-[100%] sm: h-[46px] rounded-sm bg-[#5E97A8] mt-4 lg:mt-[30px] flex items-center justify-center cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:bg-[#12395a]"
         >
           <p className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold text-white font-redhat">
             Enviar Mensagem

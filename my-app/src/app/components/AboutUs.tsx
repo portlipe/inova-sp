@@ -5,15 +5,15 @@ import Flower from "../media/big_flower.svg";
 const AboutUs: React.FC = () => {
   return (
     <section
-      id="Instituto"
-      className="w-full lg:h-[700px] sm: h-[600px] flex flex-col lg:flex-row items-center relative"
+      id="instituto"
+      className="w-full lg:h-[700px] sm: h-[600px] flex flex-col lg:flex-row items-center relative overflow-hidden"
     >
       {/* Coluna da imagem visível apenas em telas grandes */}
       <div className="hidden lg:flex w-1/2 h-[710px] relative justify-start lg:mb-0">
         <Image
           src={Flower}
           alt="big_flower"
-          className="max-w-full w-[710.13px] max-h-screen overflow-hidden"
+          className="max-w-full w-[710.13px] max-h-screen overflow-hidden animate-fade-in"
         />
       </div>
 
@@ -24,7 +24,7 @@ const AboutUs: React.FC = () => {
           <Image
             src={Flower}
             alt="big_flower"
-            className="w-full h-full object-contain opacity-20"
+            className="w-full h-full object-contain opacity-20 animate-fade-in"
           />
         </div>
 

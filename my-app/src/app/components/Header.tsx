@@ -20,9 +20,26 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const handleScroll = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Fecha o menu ao clicar em um link
+    }
+  };
+
+  const menuItems = [
+    { name: "Home", id: "header" },
+    { name: "O Instituto", id: "instituto" },
+    { name: "Serviços", id: "servicos" },
+    { name: "Newsletter", id: "newsletter" },
+    { name: "Associe-se", id: "partner" },
+    { name: "Contato", id: "footer" },
+  ];
+
   return (
     <>
-      <header
+      <section
         id="header"
         className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between px-6 lg:px-[84px] shadow-md z-40 transition-all duration-300 ${
           isOpen ? "bg-[#164772]" : "bg-white"
@@ -109,26 +126,20 @@ const Header: React.FC = () => {
               isOpen ? "mt-16" : "mt-0"
             } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat`}
           >
-            {[
-              "Home",
-              "O Instituto",
-              "Serviços",
-              "Newsletter",
-              "Associe-se",
-              "Contato",
-            ].map((item, index) => (
+            {menuItems.map((item, index) => (
               <li
                 key={index}
+                onClick={() => handleScroll(item.id)}
                 className="cursor-pointer group relative pt-4 lg:pt-0"
               >
-                <span>{item}</span>
+                <span>{item.name}</span>
                 <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:opacity-0 group-hover:translate-x-full origin-left transition-all duration-300"></span>
                 <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 delay-300"></span>
               </li>
             ))}
           </ul>
         </nav>
-      </header>
+      </section>
 
       {/* Ajuste para não "comer" a próxima seção */}
       <div className="h-[80px] lg:h-[149.12px]" />

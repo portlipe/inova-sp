@@ -21,12 +21,13 @@ const Newsletter: React.FC = () => {
                 />
                 <button
                     className="
-                       lg:w-[215px] sm: w-[350px]  sm: h-[72px] lg:h-[82px] bg-[#5E97A8] text-white font-redhat text-[20px] font-semibold leading-[26.46px]"
+                       lg:w-[215px] sm: w-[350px]  sm: h-[72px] lg:h-[82px] bg-[#5E97A8] text-white font-redhat text-[20px] font-semibold leading-[26.46px] transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
                     Cadastrar
                 </button>
             </div>
         </section>
     );
-}
+};
+
 export default Newsletter;

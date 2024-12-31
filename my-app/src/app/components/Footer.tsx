@@ -4,8 +4,17 @@ import Logo_2 from '../media/Logo_2.svg';
 import Logo_zion from '../media/Logo_zion.svg';
 
 const Footer: React.FC = () => {
+    const handleScroll = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
-        <footer className="w-full lg:h-[475px] sm: h-[768px] bg-[#0B2D44] text-white sm: py-8 lg:py-12">
+        <footer 
+        id="footer"
+        className="w-full lg:h-[475px] sm: h-[768px] bg-[#0B2D44] text-white sm: py-8 lg:py-12">
             <div className="max-w-[1135px] lg:ml-24 lg:px-0 grid grid-cols-1 lg:grid-cols-3 gap-8 sm: pl-[32px]">
                 {/* Logo e descrição */}
                 <div className="flex flex-col">
@@ -23,9 +32,20 @@ const Footer: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[80px] sm: gap-8 font-redhat lg:pl-0 text-[13px] leading-[16px]">
                     <div>
                         <ul className="space-y-8">
-                            {["Home", "O Instituto", "Serviços", "Newsletter", "Associe-se", "Contato"].map((item, index) => (
-                                <li key={index} className="relative group">
-                                    <span className="relative z-10">{item}</span>
+                            {[
+                                { name: "Home", id: "header" },
+                                { name: "O Instituto", id: "instituto" },
+                                { name: "Serviços", id: "servicos" },
+                                { name: "Newsletter", id: "newsletter" },
+                                { name: "Associe-se", id: "partner" },
+                                { name: "Contato", id: "footer" },
+                            ].map((item, index) => (
+                                <li 
+                                    key={index} 
+                                    onClick={() => handleScroll(item.id)}
+                                    className="cursor-pointer relative group"
+                                >
+                                    <span className="relative z-10">{item.name}</span>
                                     <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white transform scale-x-0 group-hover:opacity-0 group-hover:translate-x-full origin-left transition-all duration-300"></span>
                                     <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white transform scale-x-0 group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 delay-300"></span>
                                 </li>
@@ -35,7 +55,13 @@ const Footer: React.FC = () => {
                     <div>
                         <ul className="space-y-8">
                             <li>
-                                <strong>E-mail:</strong> contato@inovasp.org
+                                <strong>E-mail:</strong>{" "}
+                                <a 
+                                    href="mailto:contato@inovasp.org"
+                                    className="underline hover:no-underline"
+                                >
+                                    contato@inovasp.org
+                                </a>
                             </li>
                             <li className="whitespace-nowrap">
                                 <strong>Endereço:</strong> <br />
