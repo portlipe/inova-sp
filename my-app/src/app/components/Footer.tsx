@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                                     href="mailto:contato@inovasp.org"
                                     className="underline hover:no-underline"
                                 >
-                                    contato@inovasp.org
+                                    <br />contato@inovasp.org
                                 </a>
                             </li>
                             <li className="whitespace-nowrap">

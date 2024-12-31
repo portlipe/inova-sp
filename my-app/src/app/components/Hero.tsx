@@ -3,27 +3,6 @@ import Image from "next/image";
 import HeroImage from "../media/hero.svg";
 
 const Hero: React.FC = () => {
-  const figureRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
-
-    if (figureRef.current) {
-      observer.observe(figureRef.current);
-    }
-
-    return () => {
-      if (figureRef.current) {
-        observer.unobserve(figureRef.current);
-      }
-    };
-  }, []);
 
   return (
     <section id="hero" 

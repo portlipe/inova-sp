@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
 import Header from "./components/Header";
