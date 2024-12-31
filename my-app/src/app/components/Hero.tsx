@@ -1,54 +1,55 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Hero: React.FC = () => {
-  const figureRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const text = "Impulsionando organizações com Inovação,   Tecnologia e   Gestão   ";
+  const words = text.split(" ");
+  const [visibleWords, setVisibleWords] = useState<string[]>([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.1 } // Quando 10% do elemento estiver visível
-    );
+    let timeout: NodeJS.Timeout;
+    words.forEach((word, index) => {
+      timeout = setTimeout(() => {
+        setVisibleWords((prev) => [...prev, word]);
+      }, index * 200); // Adiciona cada palavra a cada 500ms
+    });
 
-    if (figureRef.current) {
-      observer.observe(figureRef.current);
-    }
-
-    return () => {
-      if (figureRef.current) {
-        observer.unobserve(figureRef.current);
-      }
-    };
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [words]);
 
   return (
     <section
       id="hero"
-      className="w-full h-[618px] flex items-center justify-center bg-[#C2C2C2]"
+      className="w-full h-[618px] flex items-center justify-center relative overflow-hidden bg-[#C2C2C2] bg-cover bg-center"
+      style={{
+        backgroundImage: `url('/media/desktop.mp4')`,
+        backgroundAttachment: "fixed",
+      }}
     >
-      <div className="flex flex-col items-center justify-center relative w-full h-full">
-        {/* Texto Principal */}
-        <h1 className="max-w-full w-full text-[70.22px] text-white font-rajdhani font-semibold leading-[71.63px] flex items-center justify-center text-center animate-fade-up z-10 mt-[225px]">
-          Impulsionando organizações com <br /> Inovação, &nbsp;&nbsp;Tecnologia &nbsp;&nbsp;e Gestão
+      {/* Texto com animação */}
+      <div className="flex items-center justify-center w-full h-full">
+        <h1 className="max-w-full w-full text-[32px] sm:text-[52px] lg:text-[70px] lg:leading-[71px] px-[32px] text-white font-rajdhani font-semibold leading-[49.4px] text-center z-10">
+          {words.map((word, index) => (
+            <React.Fragment key={index}>
+              <span
+                className={`inline-block opacity-0 transform translate-y-4 transition-all duration-700 ${
+                  visibleWords.includes(word)
+                    ? "opacity-100 translate-y-0"
+                    : ""
+                }`}
+                style={{ animationDelay: `${index * 0.5}s` }}
+              >
+                {word}
+              </span>
+              {/* Quebra de linha condicional para telas maiores */}
+              {word === "com" && (
+                <span className="hidden lg:block w-full">
+                  <br />
+                </span>
+              )}
+              &nbsp;
+            </React.Fragment>
+          ))}
         </h1>
-
-        {/* Container do Vídeo */}
-        <div
-          ref={figureRef}
-          className={`flex-1 w-full relative z-2 transition-all duration-700 ${isVisible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-[3.9393rem] opacity-0"
-            }`}
-          style={{
-            clipPath: isVisible
-              ? "inset(0px 0px 0px 0px)"
-              : "inset(0px 289.082px 119.112px 401.483px)",
-          }}
-        >
-          {/* Placeholder para Layout */}
-        </div>
       </div>
     </section>
   );

@@ -4,41 +4,42 @@ const Partner: React.FC = () => {
   return (
     <section
       id="partner"
-      className="w-full h-[768px] bg-[#5E97A8] flex items-center justify-center gap-60"
+      className="w-full min-h-screen bg-[#5E97A8] flex flex-col items-center justify-center px-6 py-10 lg:flex-row lg:gap-60"
     >
       {/* Texto da seção */}
-      <div className="max-w-[387px] w-full h-[87px] lg:h-[198px] mb-6 lg:mb-0 lg:ml-[70px] text-center lg:text-left">
-        <h1 className="text-[28px] sm:text-[36px] lg:text-[54px] font-medium text-white font-rajdhani leading-[51.84px] pb-[22px]">
+      <div className="text-center lg:text-left max-w-[387px] w-full mb-8 lg:mb-0">
+        <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] pb-4 sm: px-[30px]">
           Vamos inovar Juntos?
         </h1>
-
-        <p className="lg: text-[14px] leading-[22.4px] w-[294px] lg: mx-0 text-white font-redhat">
+        <p className="lg: text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8] text-white font-redhat lg:pr-[26px] sm: px-[38px]">
           Estamos prontos para iniciar a transformação na sua organização. Preencha o formulário para se tornar um cliente ou associado e nossa equipe entrará em contato.
         </p>
       </div>
 
       {/* Formulário */}
-      <div className="max-w-[670px] w-full h-auto bg-white flex flex-col rounded-sm p-6 lg: py-[43px] lg: px-[77px] shadow-md pl-[76px]">
-        <h1 className="text-[20px] sm:text-[24px] lg:text-[30px] font-medium text-black font-rajdhani leading-[1.2]">
+      <div className="w-full max-w-[670px] bg-white flex flex-col rounded-sm p-6 lg:py-[43px] lg:px-[77px] shadow-md">
+        <h1 className="text-[20px] sm:text-[24px] lg:text-[30px] font-medium text-black font-rajdhani leading-[1.2] mb-4">
           Faça parte da <strong>Rede INOVA-SP</strong> e impulsione a inovação com a gente.
         </h1>
 
         <div className="flex flex-col lg:flex-row lg:gap-4">
+          {/* Nome */}
           <p
             id="nome"
-            className="text-[14px] leading-[1.6] font-semibold flex-col flex text-black font-redhat pt-[30px] lg:pt-[50px]"
+            className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
           >
             Nome
             <input
               type="text"
-              placeholder="Nome Completo"
+              placeholder="Nome completo"
               className="w-full lg:w-[240px] outline-none py-2 border-b focus:border-[#5E97A8]"
             />
           </p>
 
+          {/* Telefone */}
           <p
             id="telefone"
-            className="text-[14px] leading-[1.6] font-semibold flex-col flex text-black font-redhat pt-[30px] lg:pt-[50px]"
+            className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
           >
             Telefone
             <input
@@ -49,26 +50,28 @@ const Partner: React.FC = () => {
           </p>
         </div>
 
+        {/* E-mail */}
         <p
           id="email"
-          className="text-[14px] leading-[1.6] font-semibold flex-col flex text-black font-redhat pt-[30px] lg:pt-[50px]"
+          className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
         >
           E-mail
           <input
             type="email"
             placeholder="Endereço de e-mail"
-            className="w-[500px] outline-none py-2 border-b focus:border-[#5E97A8]"
+            className="w-full outline-none py-2 border-b focus:border-[#5E97A8]"
           />
         </p>
 
+        {/* Escolha */}
         <p
           id="escolha"
-          className="text-[14px] leading-[1.6] font-semibold flex-col flex text-black font-redhat pt-[30px] lg:pt-[50px]"
+          className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
         >
           O que você deseja se tornar?
           <select
             defaultValue=""
-            className="w-full text-black py-4 border bg-transparent outline-none cursor-pointer mt-4 focus:border-[#164772]"
+            className="w-full text-black py-3 border bg-transparent outline-none cursor-pointer mt-2 focus:border-[#5E97A8]"
           >
             <option value="" disabled>
               Escolha uma opção
@@ -78,7 +81,8 @@ const Partner: React.FC = () => {
           </select>
         </p>
 
-        <div className="flex items-center mt-[20px] lg:mt-[30px]">
+        {/* Checkbox */}
+        <div className="flex items-center mt-4 lg:mt-[30px]">
           <input
             type="checkbox"
             id="accept-terms"
@@ -92,11 +96,12 @@ const Partner: React.FC = () => {
           </label>
         </div>
 
+        {/* Botão */}
         <div
           id="mensagem"
-          className="w-full lg:w-[194px] h-[46px] rounded-sm bg-[#5E97A8] mt-[15px] lg:mt-[30px] flex items-center justify-center cursor-pointer hover:bg-[#12395a] transition-colors"
+          className="w-full h-[46px] rounded-sm bg-[#5E97A8] mt-4 lg:mt-[30px] flex items-center justify-center cursor-pointer hover:bg-[#12395a] transition-colors"
         >
-          <p className="text-[14px] leading-[1.6] font-semibold text-white font-redhat">
+          <p className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold text-white font-redhat">
             Enviar Mensagem
           </p>
         </div>
