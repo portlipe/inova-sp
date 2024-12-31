@@ -90,7 +90,7 @@ const Services: React.FC = () => {
             description:
                 "Conduzimos pesquisas voltadas para a aplicação prática da inovação e tecnologia, com o objetivo de solucionar desafios específicos de diversos setores da economia.",
             image: Pesquisas,
-            textWidth: "lg:max-w-[577px] sm:  max-w-[280]",
+            textWidth: "lg:max-w-[577px] sm: max-w-[273px]",
             subtasks: [
                 {
                     title: "Pesquisas Aplicadas e Desenvolvimento de estudos",

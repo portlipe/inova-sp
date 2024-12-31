@@ -41,7 +41,7 @@ const Header: React.FC = () => {
     <>
       <section
         id="header"
-        className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between px-6 lg:px-[84px] shadow-md z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between px-6 shadow-md z-40 transition-all duration-300 ${
           isOpen ? "bg-[#164772]" : "bg-white"
         }`}
       >
@@ -124,13 +124,13 @@ const Header: React.FC = () => {
           <ul
             className={`flex flex-col lg:flex-row ${
               isOpen ? "mt-16" : "mt-0"
-            } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat`}
+            } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}
           >
             {menuItems.map((item, index) => (
               <li
                 key={index}
                 onClick={() => handleScroll(item.id)}
-                className="cursor-pointer group relative pt-4 lg:pt-0 w-[80px]"
+                className="cursor-pointer group relative pt-4 lg:pt-0"
               >
                 <span>{item.name}</span>
                 <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:opacity-0 group-hover:translate-x-full origin-left transition-all duration-300"></span>
