@@ -29,7 +29,7 @@ const Header: React.FC = () => {
   };
 
   const menuItems = [
-    { name: "Home", id: "header" },
+    { name: "Home", id: "hero" },
     { name: "O Instituto", id: "instituto" },
     { name: "Serviços", id: "servicos" },
     { name: "Newsletter", id: "newsletter" },

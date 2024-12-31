@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                     <div>
                         <ul className="space-y-8">
                             {[
-                                { name: "Home", id: "header" },
+                                { name: "Home", id: "hero" },
                                 { name: "O Instituto", id: "instituto" },
                                 { name: "Serviços", id: "servicos" },
                                 { name: "Newsletter", id: "newsletter" },
@@ -46,8 +46,6 @@ const Footer: React.FC = () => {
                                     className="cursor-pointer relative group"
                                 >
                                     <span className="relative z-10">{item.name}</span>
-                                    <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white transform scale-x-0 group-hover:opacity-0 group-hover:translate-x-full origin-left transition-all duration-300"></span>
-                                    <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white transform scale-x-0 group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 delay-300"></span>
                                 </li>
                             ))}
                         </ul>

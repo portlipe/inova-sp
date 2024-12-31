@@ -123,7 +123,7 @@ const Services: React.FC = () => {
             </div>
 
             {/* Cards */}
-            <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm:  max-w-[380px]">
+            <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm:  max-w-[370px]">
                 {cards.map((card, index) => (
                     <div
                         key={index}

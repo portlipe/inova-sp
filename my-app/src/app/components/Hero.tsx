@@ -1,26 +1,51 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import HeroImage from "../media/hero.svg";
 
 const Hero: React.FC = () => {
-  return (
-    <section
-      id="hero"
-      className="w-full lg:h-[618px] sm: h-[520px] sm: items-center flex justify-center relative overflow-hidden bg-[#C2C2C2]"
-    >
-      {/* Vídeo de fundo */}
-      <video
-        src="my-app\my-app\src\app\media\desktop.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
-      />
+  const figureRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-      {/* Conteúdo do Hero */}
-      <div className="relative z-10">
-        <h1 className="lg:w-[975px] sm: w-[326px] lg:text-[70px] lg:leading-[70px] sm: text-[50px] sm: leading-[62px] text-white font-semibold font-rajdhani lg:text-center lg:pb-[100px]">
-          Impulsionando organizações com Inovação, &nbsp;&nbsp; Tecnologia e &nbsp;&nbsp; Gestão
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (figureRef.current) {
+      observer.observe(figureRef.current);
+    }
+
+    return () => {
+      if (figureRef.current) {
+        observer.unobserve(figureRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section id="hero" 
+    className="w-full lg:h-[618px] sm: h-[518px] flex items-center justify-center bg-[#C2C2C2]">
+      {/* Versão com texto para telas menores */}
+      <div className="lg:hidden flex items-center justify-center w-full h-full">
+        <h1 className="max-w-[326px] max-h-[229] text-[52px] text-white font-rajdhani font-semibold leading-[49.4px] flex items-left justify-center text-left animate-fade-in z-10">
+          Impulsionando organizações com
+          Inovação, Tecnologia e Gestão
         </h1>
+      </div>
+
+      {/* Versão com imagem para telas desktop */}
+      <div className="hidden lg:flex items-center justify-center w-[975px] h-[117px] mb-[100px] animate-fade-in">
+        <Image
+          src={HeroImage}
+          alt="Hero Image"
+          width={975}
+          height={117}
+          className="object-cover"
+          priority
+        />
       </div>
     </section>
   );
