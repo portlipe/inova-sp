@@ -6,7 +6,7 @@ const AboutUs: React.FC = () => {
   return (
     <section
       id="instituto"
-      className="w-full lg:h-[700px] sm: h-[600px] flex flex-col lg:flex-row items-center relative overflow-hidden"
+      className="w-full lg:h-[700px] sm: h-[632px] flex flex-col lg:flex-row items-center relative overflow-hidden py-[93px]"
     >
       {/* Coluna da imagem visível apenas em telas grandes */}
       <div className="hidden lg:flex w-1/2 h-[710px] relative justify-start lg:mb-0">
@@ -18,7 +18,7 @@ const AboutUs: React.FC = () => {
       </div>
 
       {/* Texto com imagem posicionada no fundo para telas menores */}
-      <div className="relative lg:max-w-[466px] lg:h-[320px] sm: max-w-[321px] sm: h-[323px] lg:ml-[200px] lg:bg-none sm: pt-[90px] lg:pt-0">
+      <div className="relative lg:max-w-[466px] lg:h-[320px] sm: max-w-[321px] sm: h-[323px] lg:ml-[200px] lg:bg-none lg:pt-0">
         {/* Imagem de fundo para telas menores */}
         <div className="absolute -z-10 top-0 left-1/2 transform -translate-x-1/2 lg:hidden w-[500px] h-[500px]">
           <Image

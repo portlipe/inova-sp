@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
                         src={Logo_2}
                         alt="logo_2"
                     />
-                    <p className="text-[11px] mt-4 leading-[17px] font-redhat sm: max-w-[289px]">
+                    <p className="text-[11px] mt-4 leading-[17px] font-redhat lg:w-[349px] sm: w-[289px]">
                         Atuamos para impulsionar instituições públicas e privadas por meio
                         da inovação, tecnologia, gestão estratégica e pesquisas avançadas.
                     </p>
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Copyright */}
-            <div className="lg:mt-[110px] text-[12px] leading-[18px] sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
+            <div className="lg:mt-[110px] text-[12px] leading-[15px] font-redhat sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
                 <p className="flex items-center gap-2 pt-4">
                     Desenvolvido por
                     <Image

@@ -41,24 +41,21 @@ const Header: React.FC = () => {
     <>
       <section
         id="header"
-        className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between px-6 shadow-md z-40 transition-all duration-300 ${
-          isOpen ? "bg-[#164772]" : "bg-white"
-        }`}
+        className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${isOpen ? "bg-[#164772]" : "bg-white"
+          }`}
       >
         {/* Logo */}
         <Image
           src={Logo}
           alt="logo"
-          width={216}
-          height={82}
-          className="p-[33.35px]"
+          className=" lg:w-[216px] sm: w-[168px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] ml-[84px] sm: ml-[32px]"
           priority
         />
 
         {/* Botão Menu (Hambúrguer) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="block lg:hidden focus:outline-none"
+          className="block lg:hidden focus:outline-none pr-6"
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
         >
           <svg
@@ -88,9 +85,8 @@ const Header: React.FC = () => {
 
         {/* Navigation */}
         <nav
-          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${
-            isOpen ? "block" : "hidden"
-          } lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
+          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"
+            } lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
         >
           <div className="flex items-center justify-between p-4">
             <Image
@@ -122,9 +118,8 @@ const Header: React.FC = () => {
 
           {/* Menu Items */}
           <ul
-            className={`flex flex-col lg:flex-row ${
-              isOpen ? "mt-16" : "mt-0"
-            } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}
+            className={`flex flex-col lg:flex-row ${isOpen ? "mt-16" : "mt-0"
+              } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}
           >
             {menuItems.map((item, index) => (
               <li

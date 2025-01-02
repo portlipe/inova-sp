@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Versão com imagem para telas desktop */}
-      <div className="hidden lg:flex items-center justify-center w-[975px] h-[117px] mb-[100px] animate-fade-in">
+      <div className="hidden lg:flex items-center justify-center w-[975px] h-[117px] animate-fade-in">
         <Image
           src={HeroImage}
           alt="Hero Image"
