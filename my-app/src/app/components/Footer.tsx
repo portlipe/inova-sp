@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                     <div>
                         <ul className="space-y-8 lg:mt-2 sm: mt-8">
                             <li>
-                                <strong className="block mb-2">E-mail:</strong>{" "}
+                                <strong className="block mb-4">E-mail:</strong>{" "}
                                 <a
                                     href="mailto:contato@inovasp.org"
                                     className="hover:underline"
@@ -67,11 +67,11 @@ const Footer: React.FC = () => {
                                 </a>
                             </li>
                             <li className="whitespace-nowrap">
-                                <strong className="block mb-[0.3]">Endereço:</strong> <br />
+                                <strong className="block">Endereço:</strong> <br />
                                 Av. Angélica, 2491 – 10º andar, sala 105 – São Paulo / SP
                             </li>
                             <li className="whitespace-nowrap">
-                                <strong className="block mb-[0.3px]">CNPJ:</strong> <br />
+                                <strong className="block">CNPJ:</strong> <br />
                                 45.895.492/0001-69
                             </li>
                         </ul>

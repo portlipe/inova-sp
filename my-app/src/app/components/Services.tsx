@@ -61,7 +61,7 @@ const Services: React.FC = () => {
                     title: "Eventos",
                     content:
                         "Realizamos congressos e seminários voltados para a inovação no setor público, reunindo especialistas, autoridades e stakeholders. As palestras são focadas em disseminar conhecimento, apresentar casos de sucesso e promover boas práticas de inovação.",
-                    contentWidth: "lg:max-w-[767px]  lg:h-[110px] sm: max-w-[265px]",
+                    contentWidth: "lg:max-w-[767px] sm: max-w-[265px]",
                 },
                 {
                     title: "Palestras e Workshops",
