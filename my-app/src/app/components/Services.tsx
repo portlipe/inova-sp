@@ -111,9 +111,9 @@ const Services: React.FC = () => {
     return (
         <section
             id="servicos"
-            className="w-full lg:min-h-screen bg-[#0B2B40] flex flex-col items-center justify-start text-center lg:px-4 pb-32 sm: py-[70px]"
+            className="w-full lg:min-h-screen bg-[#0B2B40] flex flex-col items-center justify-start text-center lg:px-4 lg:pb-32 py-[70px]"
         >
-            <div className="lg:mt-32 sm: mt-[70px]">
+            <div className="">
                 <h1 className="sm: text-[50px] sm: leading-[50px] lg:text-[54px] leading-[66px] text-white mb-6 font-rajdhani font-medium">
                     Nossos Serviços
                 </h1>

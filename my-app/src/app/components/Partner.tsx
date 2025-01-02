@@ -4,7 +4,7 @@ const Partner: React.FC = () => {
   return (
     <section
       id="partner"
-      className="w-full lg:h-[768px] sm: h-[865px] bg-[#5E97A8] sm: py-[70px] flex flex-col lg:items-center lg:justify-center px-6 lg:flex-row lg:gap-[170px]"
+      className="w-full lg:h-[768px] sm: h-[865px] bg-[#5E97A8] sm: py-[70px] flex flex-col lg:items-center sm: items-center lg:justify-center lg:flex-row lg:gap-[170px]"
     >
       <div className="lg:w-[1135px] sm: w-[367px] lg:h-[616px] sm: h-[685px] lg:flex lg:flow-row lg:justify-between">
         {/* Texto da seção */}
@@ -19,7 +19,7 @@ const Partner: React.FC = () => {
         </div>
 
         {/* Formulário */}
-        <div className="w-full max-w-[670px] lg:h-[616px] bg-white flex flex-col rounded-sm p-6 lg:py-[63px] lg:px-[77px] shadow-md">
+        <div className="w-full max-w-[670px] lg:h-[616px] bg-white flex flex-col rounded-sm p-6 lg:py-[63px] lg:px-[77px] sm: mx-auto shadow-md">
           <h1 className="lg:text-[30px] lg:leading-[33px] sm: text-[22px] font-medium text-black font-rajdhani leading-[20.8px] mb-4">
             Faça parte da <strong>Rede INOVA-SP</strong> e impulsione a inovação com a gente.
           </h1>
