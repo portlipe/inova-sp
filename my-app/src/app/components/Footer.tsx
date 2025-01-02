@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         { name: "Newsletter", id: "newsletter" },
         { name: "Associe-se", id: "partner" },
         { name: "Contato", id: "footer" },
-      ];
+    ];
 
     return (
         <footer
@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                                     onClick={() => handleScroll(item.id)}
                                     className="cursor-pointer group relative pt-4 lg:pt-0"
                                 >
-                                    <span className="relative group">
+                                    <span className="relative group z-10">
                                         {item.name}
                                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
                                     </span>
@@ -56,23 +56,23 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
                     <div>
-                        <ul className="space-y-8 sm: mt-8">
+                        <ul className="space-y-8 sm:mt-8">
                             <li>
-                                <strong>E-mail:</strong>{" "}
+                                <strong className="block mb-2">E-mail:</strong>{" "}
                                 <a
                                     href="mailto:contato@inovasp.org"
                                     className="hover:underline"
                                 >
-                                    <br />contato@inovasp.org
+                                    contato@inovasp.org
                                 </a>
                             </li>
                             <li className="whitespace-nowrap">
-                                <strong>Endereço:</strong> <br />
-                                Av. Angélica, 2491 – 10º andar, sala
-                                105 – São Paulo / SP
+                                <strong className="block mb-[0.3]">Endereço:</strong> <br />
+                                Av. Angélica, 2491 – 10º andar, sala 105 – São Paulo / SP
                             </li>
                             <li className="whitespace-nowrap">
-                                <strong>CNPJ:</strong> <br />45.895.492/0001-69
+                                <strong className="block mb-[0.3px]">CNPJ:</strong> <br />
+                                45.895.492/0001-69
                             </li>
                         </ul>
                     </div>
@@ -81,23 +81,23 @@ const Footer: React.FC = () => {
 
             {/* Copyright */}
             <div className="lg:mt-[110px] text-[12px] leading-[15px] font-redhat sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
-    <p className="flex items-center gap-2 pt-6">
-        Desenvolvido por
-        <a
-            href="https://www.zionsoftwarehouse.com.br"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <Image
-                src={Logo_zion}
-                alt="logo_zion"
-                width={44.75}
-                height={13.34}
-                className="inline-block cursor-pointer"
-            />
-        </a>
-    </p>
-</div>
+                <p className="flex items-center gap-2 pt-6">
+                    Desenvolvido por
+                    <a
+                        href="https://www.zionsoftwarehouse.com.br"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Image
+                            src={Logo_zion}
+                            alt="logo_zion"
+                            width={44.75}
+                            height={13.34}
+                            className="inline-block cursor-pointer"
+                        />
+                    </a>
+                </p>
+            </div>
 
         </footer>
     );
