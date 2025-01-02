@@ -78,17 +78,24 @@ const Footer: React.FC = () => {
 
             {/* Copyright */}
             <div className="lg:mt-[110px] text-[12px] leading-[15px] font-redhat sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
-                <p className="flex items-center gap-2 pt-4">
-                    Desenvolvido por
-                    <Image
-                        src={Logo_zion}
-                        alt="logo_zion"
-                        width={44.75}
-                        height={13.34}
-                        className="inline-block"
-                    />
-                </p>
-            </div>
+    <p className="flex items-center gap-2 pt-4">
+        Desenvolvido por
+        <a
+            href="https://www.zionsoftwarehouse.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <Image
+                src={Logo_zion}
+                alt="logo_zion"
+                width={44.75}
+                height={13.34}
+                className="inline-block cursor-pointer"
+            />
+        </a>
+    </p>
+</div>
+
         </footer>
     );
 };
