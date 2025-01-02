@@ -6,29 +6,28 @@ const AboutUs: React.FC = () => {
   return (
     <section
       id="instituto"
-      className="w-full lg:h-[700px] sm: h-[632px] flex flex-col lg:flex-row items-center relative overflow-hidden py-[93px]"
+      className="w-full lg:h-[618px] sm: h-[632px] flex flex-col lg:flex-row items-center relative overflow-hidden py-[70px]" // Reduzi o padding
     >
       {/* Coluna da imagem visível apenas em telas grandes */}
-      <div className="hidden lg:flex w-1/2 h-[710px] relative justify-start lg:mb-0">
+      <div className="hidden lg:flex w-1/2 h-auto relative justify-start">
         <Image
           src={Flower}
           alt="big_flower"
-          className="max-w-full w-[710.13px] max-h-screen overflow-hidden animate-fade-in"
+          className="max-w-full w-[710px] max-h-screen overflow-hidden animate-fade-in" // Ajustei o tamanho da imagem
         />
       </div>
 
       {/* Texto com imagem posicionada no fundo para telas menores */}
-      <div className="relative lg:max-w-[466px] lg:h-[320px] sm: max-w-[321px] sm: h-[323px] lg:ml-[200px] lg:bg-none lg:pt-0">
+      <div className="relative lg:max-w-[466px] sm: max-w-[321px] lg:ml-32">
         {/* Imagem de fundo para telas menores */}
-        <div className="absolute -z-10 top-0 left-1/2 transform -translate-x-1/2 lg:hidden w-[500px] h-[500px]">
+        <div className="absolute -z-10 top-0 left-1/2 transform -translate-x-1/2 lg:hidden w-[400px] h-[400px]"> {/* Reduzi o tamanho da imagem em telas menores */}
           <Image
             src={Flower}
             alt="big_flower"
             className="w-full h-full object-contain opacity-20 animate-fade-in"
           />
         </div>
-
-        <h2 className="sm: text-[50px] sm: leading-[62px] lg:text-[54px] lg:leading-[66px] font-bold text-black mb-4 font-rajdhani font-medium">
+        <h2 className="sm: text-[50px] sm: leading-[62px] lg:text-[54px] lg:leading-[66px] font-medium text-black mb-3 font-rajdhani">
           O Instituto
         </h2>
         <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-black font-redhat">
@@ -40,9 +39,9 @@ const AboutUs: React.FC = () => {
           tecnológicas que transformem a gestão das organizações, promovendo
           eficiência, transparência e desenvolvimento sustentável.
         </p>
-        <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-black mt-4 font-redhat">
+        <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-black mt-3 font-redhat">
           Nossa missão é criar soluções sob medida para os desafios de hoje e
-          antecipando as necessidades de amanhã. Com isso, trabalhamos para
+          antecipar as necessidades de amanhã. Com isso, trabalhamos para
           tornar a tecnologia um ativo poderoso que impulsiona o crescimento e a
           qualidade dos serviços oferecidos à sociedade.
         </p>

@@ -117,13 +117,13 @@ const Services: React.FC = () => {
                 <h1 className="sm: text-[50px] sm: leading-[50px] lg:text-[54px] leading-[66px] text-white mb-6 font-rajdhani font-medium">
                     Nossos Serviços
                 </h1>
-                <p className="lg:text-[14px] lg: eading-[22.4px] sm: text-[13px] sm: leading-[20.8px] font-redhat text-white lg:w-[853.17px] sm: w-[306px] mb-12 lg:mx-[293px]">
+                <p className="lg:text-[14px] lg: eading-[22.4px] sm: text-[13px] sm: leading-[20.8px] font-redhat text-white lg:w-[853.17px] sm: w-[306px] mb-12 lg:mx-[293px] sm: mx-auto">
                     Com uma equipe especializada, oferecemos soluções que tornam a tecnologia e a inovação ferramentas concretas de transformação. Nossos serviços visam não apenas aprimorar a eficiência dos processos de gestão das organizações, mas também gerar um impacto positivo na vida das pessoas, promovendo uma gestão mais inteligente e orientada ao desenvolvimento da sociedade
                 </p>
             </div>
 
             {/* Cards */}
-            <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm: max-w-[353px]">
+            <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm: max-w-[373px]">
                 {cards.map((card, index) => (
                     <div
                         key={index}
@@ -131,7 +131,7 @@ const Services: React.FC = () => {
                             }`}
                     >
                         {/* Card Header */}
-                        <div className="flex lg:pt-[46px] sm: pt-[35px] lg:pl-[45px] sm: pl-[15px]">
+                        <div className="flex lg:pt-[46px] sm: pt-[35px] lg:pl-[45px] sm: pl-[10px]">
                             {/* Imagem */}
                             <div className="relative flex items-center justify-center lg:w-[75px] lg:h-[75px] sm: w-[46px] sm: h-[46px] flex-shrink-0">
                                 <Image
@@ -158,7 +158,7 @@ const Services: React.FC = () => {
                         </div>
 
                         {/* Botão */}
-                        <div className="absolute lg:top-[60px] sm: bottom-[15px] lg:right-[45px] sm: right-[13.5px]">
+                        <div className="absolute lg:top-[60px] sm: bottom-[12px] lg:right-[45px] sm: right-[10.5px]">
                             <Image
                                 src={Button}
                                 alt={openCardIndex === index ? "Fechar Card" : "Abrir Card"}

@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import Image from "next/image";
+import seta from "../media/seta.svg";
 
 const Partner: React.FC = () => {
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+
+  const handleSelectClick = () => {
+    setIsSelectOpen((prev) => !prev);
+  };
+
   return (
     <section
       id="partner"
@@ -13,9 +21,9 @@ const Partner: React.FC = () => {
             Vamos inovar Juntos?
           </h1>
           <p className="text-[13px] leading-[20.8px] text-white font-redhat lg:w-[273px] sm: w-[266px] sm: mx-auto lg:mx-0 lg:text-left lg:pb-0 sm: pb-[30px]">
-            Estamos prontos para iniciar a transformação na sua organização. Preencha o formulário para se tornar um cliente ou associado e nossa equipe entrará em contato.
+            Estamos prontos para iniciar a transformação na sua organização.
+            Preencha o formulário para se tornar um cliente ou associado e nossa equipe entrará em contato.
           </p>
-
         </div>
 
         {/* Formulário */}
@@ -26,62 +34,73 @@ const Partner: React.FC = () => {
 
           <div className="flex flex-col lg:flex-row lg:gap-4">
             {/* Nome */}
-            <p
+            <div
               id="nome"
               className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
             >
-              Nome
+              <label>Nome</label>
               <input
                 type="text"
                 placeholder="Nome completo"
                 className="w-full lg:w-[240px] outline-none py-2 border-b focus:border-[#5E97A8]"
               />
-            </p>
+            </div>
 
             {/* Telefone */}
-            <p
+            <div
               id="telefone"
               className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
             >
-              Telefone
+              <label>Telefone</label>
               <input
                 type="text"
                 placeholder="(00) 0 0000-0000"
                 className="w-full lg:w-[240px] outline-none py-2 border-b focus:border-[#5E97A8]"
               />
-            </p>
+            </div>
           </div>
 
           {/* E-mail */}
-          <p
+          <div
             id="email"
             className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
           >
-            E-mail
+            <label>E-mail</label>
             <input
               type="email"
               placeholder="Endereço de e-mail"
               className="w-full outline-none py-2 border-b focus:border-[#5E97A8]"
             />
-          </p>
+          </div>
 
           {/* Escolha */}
-          <p
+          <div
             id="escolha"
             className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
           >
-            O que você deseja se tornar?
-            <select
-              defaultValue=""
-              className="w-full text-black py-3 border bg-transparent outline-none cursor-pointer mt-2 focus:border-[#5E97A8]"
-            >
-              <option value="" disabled>
-                Escolha uma opção
-              </option>
-              <option value="cliente">Quero ser cliente</option>
-              <option value="associado">Quero ser associado</option>
-            </select>
-          </p>
+            <label>O que você deseja se tornar?</label>
+            <div className="relative w-full">
+              <select
+                defaultValue=""
+                className="w-full text-black py-3 pr-12 border bg-transparent outline-none cursor-pointer mt-2 focus:border-[#5E97A8] p-4 appearance-none"
+                onClick={handleSelectClick}
+              >
+                <option value="" disabled>
+                  O que você deseja se tornar?
+                </option>
+                <option value="cliente">Quero ser cliente</option>
+                <option value="associado">Quero ser associado</option>
+              </select>
+              {/* Seta personalizada */}
+              <span
+                className={`absolute inset-y-0 right-4 flex items-center transform transition-transform duration-300 ${isSelectOpen ? "rotate-0" : "rotate-180"
+                  }`}
+              >
+                <Image src={seta} alt="seta" width={15} height={15} />
+              </span>
+
+            </div>
+          </div>
 
           {/* Checkbox */}
           <div className="flex items-center mt-4 lg:mt-[30px]">
@@ -101,7 +120,7 @@ const Partner: React.FC = () => {
           {/* Botão */}
           <div
             id="mensagem"
-            className="lg:w-[194px] lg:h-[46px] sm: w-[100%] sm: h-[46px] rounded-sm bg-[#5E97A8] mt-4 flex items-center justify-center cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:bg-[#12395a]"
+            className="lg:w-[194px] lg:h-[46px] sm: w-[100%] sm: h-[46px] rounded-sm lg:bg-[#5E97A8] sm: bg-[#12395a] mt-4 flex items-center justify-center cursor-pointer transform transition-transform duration-300 hover:scale-105 lg:hover:bg-[#12395a]"
           >
             <p className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold text-white font-redhat">
               Enviar Mensagem

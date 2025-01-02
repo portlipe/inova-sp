@@ -127,9 +127,10 @@ const Header: React.FC = () => {
                 onClick={() => handleScroll(item.id)}
                 className="cursor-pointer group relative pt-4 lg:pt-0"
               >
-                <span>{item.name}</span>
-                <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:opacity-0 group-hover:translate-x-full origin-left transition-all duration-300"></span>
-                <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-x-100 origin-left transition-all duration-300 delay-300"></span>
+                <span className="relative">
+                  {item.name}
+                  <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
+                </span>
               </li>
             ))}
           </ul>
