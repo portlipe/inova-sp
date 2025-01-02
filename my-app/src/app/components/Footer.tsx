@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
                                     onClick={() => handleScroll(item.id)}
                                     className="cursor-pointer group relative pt-4 lg:pt-0"
                                 >
-                                    <span className="relative">
+                                    <span className="relative group">
                                         {item.name}
                                         <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
                                     </span>

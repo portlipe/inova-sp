@@ -84,6 +84,7 @@ const Header: React.FC = () => {
         </button>
 
         {/* Navigation */}
+        {/* Navigation */}
         <nav
           className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"
             } lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
@@ -119,7 +120,7 @@ const Header: React.FC = () => {
           {/* Menu Items */}
           <ul
             className={`flex flex-col lg:flex-row ${isOpen ? "mt-16" : "mt-0"
-              } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}
+              } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm:w-[79px]`}
           >
             {menuItems.map((item, index) => (
               <li
@@ -127,16 +128,15 @@ const Header: React.FC = () => {
                 onClick={() => handleScroll(item.id)}
                 className="cursor-pointer group relative pt-4 lg:pt-0"
               >
-                <span className="relative">
+                <span className="relative group">
                   {item.name}
-                  <span className="absolute left-0 bottom-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:scale-x-100 group-hover:translate-x-0 origin-left transition-all duration-300"></span>
                 </span>
               </li>
             ))}
           </ul>
         </nav>
       </section>
-
       {/* Ajuste para não "comer" a próxima seção */}
       <div className="h-[80px] lg:h-[149.12px]" />
     </>
