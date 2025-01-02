@@ -120,7 +120,7 @@ const Partner: React.FC = () => {
           {/* Botão */}
           <div
             id="mensagem"
-            className="lg:w-[194px] lg:h-[46px] sm: w-[100%] sm: h-[46px] rounded-sm lg:bg-[#5E97A8] sm: bg-[#12395a] mt-4 flex items-center justify-center cursor-pointer transform transition-transform duration-300 hover:scale-105 lg:hover:bg-[#12395a]"
+            className="lg:w-[194px] lg:h-[46px] sm: w-[100%] sm: h-[46px] rounded-sm bg-[#12395a] mt-4 flex items-center justify-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
           >
             <p className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold text-white font-redhat">
               Enviar Mensagem

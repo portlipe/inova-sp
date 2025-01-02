@@ -21,7 +21,7 @@ const Newsletter: React.FC = () => {
                 />
                 <button
                     className="
-                       lg:w-[215px] sm: w-[350px]  sm: h-[72px] lg:h-[82px] lg:bg-[#5E97A8] sm: bg-[#12395a] text-white font-redhat text-[20px] font-semibold leading-[26.46px] transform transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-[#12395a]"
+                       lg:w-[215px] sm: w-[350px]  sm: h-[72px] lg:h-[82px] bg-[#12395a] text-white font-redhat text-[20px] font-semibold leading-[26.46px] transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
                     Cadastrar
                 </button>
