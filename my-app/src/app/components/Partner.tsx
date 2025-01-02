@@ -28,7 +28,7 @@ const Partner: React.FC = () => {
 
         {/* Formulário */}
         <div className="w-full max-w-[670px] lg:h-[616px] bg-white flex flex-col rounded-sm p-6 lg:py-[63px] lg:px-[77px] sm: mx-auto shadow-md">
-          <h1 className="lg:text-[30px] lg:leading-[33px] sm: text-[22px] font-medium text-black font-rajdhani leading-[20.8px] mb-4">
+          <h1 className="lg:text-[30px] lg:leading-[33px] sm: text-[22px] font-medium text-black font-rajdhani leading-[20.8px] mb-4 lg:text-left sm: text-center">
             Faça parte da <strong>Rede INOVA-SP</strong> e impulsione a inovação com a gente.
           </h1>
 
