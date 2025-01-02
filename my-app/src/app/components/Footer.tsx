@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
                     <div>
-                        <ul className="space-y-8 sm:mt-8">
+                        <ul className="space-y-8 lg:mt-2 sm: mt-8">
                             <li>
                                 <strong className="block mb-2">E-mail:</strong>{" "}
                                 <a
