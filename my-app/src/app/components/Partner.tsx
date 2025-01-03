@@ -14,7 +14,7 @@ const Partner: React.FC = () => {
       id="partner"
       className="w-full lg:h-[768px] sm: h-[865px] bg-[#5E97A8] sm: py-[70px] flex flex-col lg:items-center sm: items-center lg:justify-center lg:flex-row lg:gap-[170px]"
     >
-      <div className="lg:w-[1135px] sm: w-[367px] lg:h-[616px] sm: h-[685px] lg:flex lg:flow-row lg:justify-between">
+      <div className="lg:w-[1135px] sm: w-[367px] lg:h-[616px] sm: h-[685px] lg:py-[25px] lg:flex lg:flow-row lg:justify-between">
         {/* Texto da seção */}
         <div className="sm: flex flex-col lg:justify-center lg:items-left sm: text-center sm: mx-auto lg:text-left lg:w-[387px] sm: w-[299px]">
           <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] lg:pb-[35px] sm: pb-[15px]">
@@ -27,7 +27,7 @@ const Partner: React.FC = () => {
         </div>
 
         {/* Formulário */}
-        <div className="w-full max-w-[670px] lg:h-[616px] bg-white flex flex-col rounded-sm p-6 lg:py-[63px] lg:px-[77px] sm: mx-auto shadow-md">
+        <div className="w-full max-w-[670px] lg:h-[586px] bg-white flex flex-col rounded-sm p-6 lg:py-[43px] lg:px-[77px] sm: mx-auto shadow-md">
           <h1 className="lg:text-[30px] lg:leading-[33px] sm: text-[22px] font-medium text-black font-rajdhani leading-[20.8px] mb-4 lg:text-left sm: text-center">
             Faça parte da <strong>Rede INOVA-SP</strong> e impulsione a inovação com a gente.
           </h1>
@@ -55,7 +55,7 @@ const Partner: React.FC = () => {
               <input
                 type="text"
                 placeholder="(00) 0 0000-0000"
-                className="w-full lg:w-[240px] outline-none py-2 border-b focus:border-[#5E97A8]"
+                className="w-full lg:w-[260px] outline-none py-2 border-b focus:border-[#5E97A8]"
               />
             </div>
           </div>
@@ -78,15 +78,15 @@ const Partner: React.FC = () => {
             id="escolha"
             className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold flex flex-col text-black font-redhat pt-4 lg:pt-[30px]"
           >
-            <label>O que você deseja se tornar?</label>
+            <label className="pb-[20px]">O que você deseja se tornar?</label>
             <div className="relative w-full">
               <select
                 defaultValue=""
-                className="w-full text-black py-3 pr-12 border bg-transparent outline-none cursor-pointer mt-2 focus:border-[#5E97A8] p-4 appearance-none"
+                className="w-full text-black py-3 pr-12 border bg-transparent outline-none cursor-pointer focus:border-[#5E97A8] p-4 appearance-none"
                 onClick={handleSelectClick}
               >
                 <option value="" disabled>
-                  O que você deseja se tornar?
+                  Escolha uma opção
                 </option>
                 <option value="cliente">Quero ser cliente</option>
                 <option value="associado">Quero ser associado</option>
@@ -103,7 +103,7 @@ const Partner: React.FC = () => {
           </div>
 
           {/* Checkbox */}
-          <div className="flex items-center mt-4 lg:mt-[30px]">
+          <div className="flex items-center my-4 lg:my-[20px]">
             <input
               type="checkbox"
               id="accept-terms"
@@ -120,7 +120,7 @@ const Partner: React.FC = () => {
           {/* Botão */}
           <div
             id="mensagem"
-            className="lg:w-[194px] lg:h-[46px] sm: w-[100%] sm: h-[46px] rounded-sm bg-[#12395a] mt-4 flex items-center justify-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
+            className="lg:w-[194px] lg:h-[46px] sm: w-[100%] sm: h-[46px] rounded-sm bg-[#12395a] flex items-center justify-center cursor-pointer transform transition-transform duration-300 hover:scale-105"
           >
             <p className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-semibold text-white font-redhat">
               Enviar Mensagem

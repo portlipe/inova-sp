@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Rectangle from "../media/Rectangle_blue.svg";
 import Human_Target from "../media/human_target.svg";
@@ -9,6 +9,23 @@ import Button from "../media/Button.svg";
 
 const Services: React.FC = () => {
     const [openCardIndex, setOpenCardIndex] = useState<number | null>(null);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        if (openCardIndex !== null) {
+            const targetCard = cardRefs.current[openCardIndex];
+            if (targetCard) {
+                const rect = targetCard.getBoundingClientRect();
+                const offset = window.pageYOffset || document.documentElement.scrollTop;
+                const top = rect.top + offset - 135;
+
+                window.scrollTo({
+                    top,
+                    behavior: "smooth",
+                });
+            }
+        }
+    }, [openCardIndex]);
 
     const cards = [
         {
@@ -122,17 +139,17 @@ const Services: React.FC = () => {
                 </p>
             </div>
 
-            {/* Cards */}
             <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm: max-w-[373px]">
                 {cards.map((card, index) => (
                     <div
                         key={index}
-                        className={`relative flex flex-col bg-[#F2F2F2] rounded-md shadow-md text-left transition-all ${openCardIndex === index ? "h-auto" : "lg:h-[167px] sm: h-[190px]"
-                            }`}
+                        ref={(el) => {
+                            cardRefs.current[index] = el;
+                        }}
+                        className={`relative flex flex-col bg-[#F2F2F2] rounded-md shadow-md text-left transition-all ${openCardIndex === index ? "h-auto" : "lg:h-[167px] sm: h-[190px]"} ${index === 0 ? "card-consultoria" : ""}`}
                     >
-                        {/* Card Header */}
+
                         <div className="flex lg:pt-[46px] sm: pt-[35px] lg:pl-[45px] sm: pl-[10px]">
-                            {/* Imagem */}
                             <div className="relative flex items-center justify-center lg:w-[75px] lg:h-[75px] sm: w-[46px] sm: h-[46px] flex-shrink-0">
                                 <Image
                                     src={Rectangle}
@@ -145,24 +162,20 @@ const Services: React.FC = () => {
                                     className="absolute lg:w-[47px] lg:h-[47px] sm: w-[26px] sm: h-[26px]"
                                 />
                             </div>
-
-                            {/* Título e Descrição */}
                             <div className={`flex-1 lg:pl-6 sm: pl-2 ${card.textWidth}`}>
-                                <h3 className="lg:text-[26px] sm: text-[16px] lg:leading-[34.4px] sm: leading-[21px] font-extrabold text-black font-redhat truncate">
+                                <h3 className="lg:text-[26px] sm: text-[16px] font-extrabold font-redhat text-black">
                                     {card.title}
                                 </h3>
-                                <p className="text-[#5E5E5E] lg:text-[14px] sm: text-[14px] lg:leading-[22.4px] sm: leading-[20.8px] sm: pt-1 font-redhat font-normal">
+                                <p className="text-[#5E5E5E] lg:text-[14px] sm: text-[14px] font-redhat">
                                     {card.description}
                                 </p>
                             </div>
                         </div>
-
-                        {/* Botão */}
                         <div className="absolute lg:top-[60px] sm: bottom-[12px] lg:right-[45px] sm: right-[10.5px]">
                             <Image
                                 src={Button}
                                 alt={openCardIndex === index ? "Fechar Card" : "Abrir Card"}
-                                className={`lg:w-[54px] sm: w-[32px] lg:h-[54px] sm: h-[32px] cursor-pointer transform transition-transform duration-300 hover:scale-110 ${openCardIndex === index ? "rotate-180" : "rotate-0"
+                                className={`lg:w-[54px] sm: w-[32px] cursor-pointer transform transition-transform ${openCardIndex === index ? "rotate-180" : "rotate-0"
                                     }`}
                                 onClick={() =>
                                     setOpenCardIndex(openCardIndex === index ? null : index)
@@ -178,13 +191,14 @@ const Services: React.FC = () => {
                                         key={subIndex}
                                         className={`mb-2 ${subtask.contentWidth}`}
                                     >
-                                        <h4 className="lg: text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-extrabold text-[#5E5E5E] font-redhat">
+                                        <h4 className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-extrabold text-[#5E5E5E] font-redhat">
                                             {subtask.title}
                                         </h4>
                                         <p className="text-[#5E5E5E] lg:text-[14px] sm: text-[14px] lg:leading-[22.4px] sm: leading-[20.8px] font-redhat font-medium break-words">
                                             {subtask.content}
                                         </p>
                                     </div>
+
                                 ))}
                             </div>
                         )}
