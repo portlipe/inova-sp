@@ -17,7 +17,7 @@ const Partner: React.FC = () => {
       <div className="lg:w-[1135px] sm: w-[367px] lg:h-[616px] sm: h-[685px] lg:flex lg:flow-row lg:justify-between">
         {/* Texto da seção */}
         <div className="sm: flex flex-col lg:justify-center lg:items-left sm: text-center sm: mx-auto lg:text-left lg:w-[387px] sm: w-[299px]">
-          <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] lg:pb-[35px] sm: pb-[30px]">
+          <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] font-medium text-white font-rajdhani lg:leading-[51px] lg:pb-[35px] sm: pb-[15px]">
             Vamos inovar Juntos?
           </h1>
           <p className="text-[13px] leading-[20.8px] text-white font-redhat lg:w-[273px] sm: w-[266px] sm: mx-auto lg:mx-0 lg:text-left lg:pb-0 sm: pb-[30px]">
