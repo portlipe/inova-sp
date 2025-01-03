@@ -28,20 +28,20 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700;800&family=Red+Hat+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        <title>Instituto Inova SP - Inovação, Tecnologia e Gestão Estratégica</title>
+        <title>Inova SP - Inovação, Tecnologia e Gestão Estratégica</title>
         <meta
           name="description"
-          content="Instituto Inova SP: Transformamos instituições públicas e privadas por meio da inovação, tecnologia e gestão estratégica. Saiba mais!"
+          content="Inova SP: Transformamos instituições públicas e privadas por meio da inovação, tecnologia e gestão estratégica. Saiba mais!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="Instituto Inova SP - Inovação, Tecnologia e Gestão Estratégica" />
+        <meta property="og:title" content="Inova SP - Inovação, Tecnologia e Gestão Estratégica" />
         <meta
           property="og:description"
-          content="Instituto Inova SP: Transformamos instituições públicas e privadas por meio da inovação, tecnologia e gestão estratégica. Saiba mais!"
+          content="Inova SP: Transformamos instituições públicas e privadas por meio da inovação, tecnologia e gestão estratégica. Saiba mais!"
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="" />
@@ -49,17 +49,17 @@ export default function RootLayout({
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Instituto Inova SP - Inovação, Tecnologia e Gestão Estratégica" />
+        <meta name="twitter:title" content="Inova SP - Inovação, Tecnologia e Gestão Estratégica" />
         <meta
           name="twitter:description"
-          content="Instituto Inova SP: Transformamos instituições públicas e privadas por meio da inovação, tecnologia e gestão estratégica. Saiba mais!"
+          content="Inova SP: Transformamos instituições públicas e privadas por meio da inovação, tecnologia e gestão estratégica. Saiba mais!"
         />
-        <meta name="twitter:image" content="/media/twitter-card.jpg" />
+        <meta name="twitter:image" content="" />
 
         {/* Keywords */}
         <meta
           name="keywords"
-          content="inovação, tecnologia, gestão estratégica, Instituto Inova SP, pesquisa, transformação organizacional"
+          content="inovação, inovadoras, soluções, tecnologia, gestão estratégica, Inova SP, pesquisa, transformação organizacional, Instituto"
         />
       </head>
       <body
