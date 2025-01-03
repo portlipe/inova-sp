@@ -13,22 +13,24 @@ const Services: React.FC = () => {
 
     const handleCardClick = (index: number) => {
         if (openCardIndex === index) {
-            // Fechando o card: scroll para o início
-            const targetCard = cardRefs.current[index];
-            if (targetCard) {
-                const rect = targetCard.getBoundingClientRect();
-                const offset = window.pageYOffset || document.documentElement.scrollTop;
-                const top = rect.top + offset - 130; // Ajuste o deslocamento conforme necessário
-
-                window.scrollTo({
-                    top,
-                    behavior: "smooth",
-                });
-            }
             setOpenCardIndex(null);
         } else {
-            // Abrindo o card
-            setOpenCardIndex(index);
+            setOpenCardIndex(null);
+
+            setTimeout(() => {
+                const targetCard = cardRefs.current[index];
+                if (targetCard) {
+                    const rect = targetCard.getBoundingClientRect();
+                    const offset = window.pageYOffset || document.documentElement.scrollTop;
+                    const top = rect.top + offset - 135;
+
+                    window.scrollTo({
+                        top,
+                        behavior: "smooth",
+                    });
+                    setOpenCardIndex(index);
+                }
+            }, 100);
         }
     };
 
@@ -137,15 +139,16 @@ const Services: React.FC = () => {
             id="servicos"
             className="w-full lg:min-h-screen bg-[#0B2B40] flex flex-col items-center justify-start text-center lg:px-4 lg:pb-32 py-[70px]"
         >
-            <div className="">
+            <div>
                 <h1 className="sm: text-[50px] sm: leading-[50px] lg:text-[54px] leading-[66px] text-white mb-6 font-rajdhani font-medium">
                     Nossos Serviços
                 </h1>
-                <p className="lg:text-[14px] lg: eading-[22.4px] sm: text-[13px] sm: leading-[20.8px] font-redhat text-white lg:w-[853.17px] sm: w-[306px] mb-12 lg:mx-[293px] sm:">
-                    Com uma equipe especializada, oferecemos soluções que tornam a tecnologia e a inovação ferramentas concretas de transformação. Nossos serviços visam não apenas aprimorar a eficiência dos processos de gestão das organizações, mas também gerar um impacto positivo na vida das pessoas, promovendo uma gestão mais inteligente e orientada ao desenvolvimento da sociedade
+                <p className="lg:text-[14px] lg:leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] font-redhat text-white lg:w-[853.17px] sm: w-[306px] mb-12 lg:mx-[293px]">
+                    Com uma equipe especializada, oferecemos soluções que tornam a tecnologia e a inovação ferramentas concretas de transformação.
                 </p>
             </div>
 
+            {/*Cards*/}
             <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm: max-w-[373px]">
                 {cards.map((card, index) => (
                     <div
@@ -155,7 +158,6 @@ const Services: React.FC = () => {
                         }}
                         className={`relative flex flex-col bg-[#F2F2F2] rounded-md shadow-md text-left transition-all ${openCardIndex === index ? "h-auto" : "lg:h-[167px] sm: h-[190px]"} ${index === 0 ? "card-consultoria" : ""}`}
                     >
-
                         <div className="flex lg:pt-[46px] sm: pt-[35px] lg:pl-[45px] sm: pl-[10px]">
                             <div className="relative flex items-center justify-center lg:w-[75px] lg:h-[75px] sm: w-[46px] sm: h-[46px] flex-shrink-0">
                                 <Image
@@ -182,20 +184,14 @@ const Services: React.FC = () => {
                             <Image
                                 src={Button}
                                 alt={openCardIndex === index ? "Fechar Card" : "Abrir Card"}
-                                className={`lg:w-[54px] sm: w-[32px] cursor-pointer transform transition-transform ${openCardIndex === index ? "rotate-180" : "rotate-0"
-                                    }`}
+                                className={`lg:w-[54px] sm: w-[32px] cursor-pointer transform transition-transform ${openCardIndex === index ? "rotate-180" : "rotate-0"}`}
                                 onClick={() => handleCardClick(index)}
                             />
                         </div>
-
-                        {/* Subtasks */}
                         {openCardIndex === index && card.subtasks && (
                             <div className="space-y-5 lg:ml-[141px] mt-4 lg:mb-[45px] sm: ml-[67px]">
                                 {card.subtasks.map((subtask, subIndex) => (
-                                    <div
-                                        key={subIndex}
-                                        className={`mb-2 ${subtask.contentWidth}`}
-                                    >
+                                    <div key={subIndex} className={`mb-2 ${subtask.contentWidth}`}>
                                         <h4 className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-extrabold text-[#5E5E5E] font-redhat">
                                             {subtask.title}
                                         </h4>
@@ -203,7 +199,6 @@ const Services: React.FC = () => {
                                             {subtask.content}
                                         </p>
                                     </div>
-
                                 ))}
                             </div>
                         )}

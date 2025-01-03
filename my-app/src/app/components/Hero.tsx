@@ -18,10 +18,9 @@ const Hero: React.FC = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Filtro escuro sobre o vídeo */}
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-1"></div>
 
-      {/* Versão com texto para telas menores */}
+      {/* Versão com texto para mobile */}
       <div className="lg:hidden flex items-center justify-center w-full h-full z-10">
         <h1 className="max-w-[326px] max-h-[229px] text-[52px] text-white font-rajdhani font-semibold leading-[49.4px] flex items-left justify-center text-left animate-fade-in">
           Impulsionando organizações com

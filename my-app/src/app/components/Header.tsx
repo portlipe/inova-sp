@@ -5,11 +5,16 @@ import LogoMenu from "../media/logo_menu.svg";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
+    if (!hasAnimated) {
+      setHasAnimated(true);
+    }
+
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
-        setIsOpen(false); // Fecha o menu automaticamente no layout lg
+        setIsOpen(false); 
       }
     };
 
@@ -18,13 +23,13 @@ const Header: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [hasAnimated]);
 
-  const handleScroll = (sectionId: string) => {
+  const handleScrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // Fecha o menu ao clicar em um link
+      setIsOpen(false);
     }
   };
 
@@ -41,16 +46,23 @@ const Header: React.FC = () => {
     <>
       <section
         id="header"
-        className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${isOpen ? "bg-[#164772]" : "bg-white"
-          }`}
+        className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${
+          isOpen ? "bg-[#164772]" : "bg-white"
+        }`}
       >
         {/* Logo */}
-        <Image
-          src={Logo}
-          alt="logo"
-          className=" lg:w-[216px] sm: w-[168px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] lg:ml-[84px] sm: ml-[32px]"
-          priority
-        />
+        <div
+          className={`transform transition-all duration-1000 opacity-0 ${
+            hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"
+          }`}
+        >
+          <Image
+            src={Logo}
+            alt="logo"
+            className=" lg:w-[216px] sm: w-[168px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] lg:ml-[84px] sm: ml-[32px]"
+            priority
+          />
+        </div>
 
         {/* Botão Menu (Hambúrguer) */}
         <button
@@ -84,10 +96,10 @@ const Header: React.FC = () => {
         </button>
 
         {/* Navigation */}
-        {/* Navigation */}
         <nav
-          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"
-            } lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
+          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${
+            isOpen ? "block" : "hidden"
+          } lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
         >
           <div className="flex items-center justify-between p-4">
             <Image
@@ -119,13 +131,14 @@ const Header: React.FC = () => {
 
           {/* Menu Items */}
           <ul
-            className={`flex flex-col lg:flex-row ${isOpen ? "mt-16" : "mt-0"
-              } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm:w-[79px]`}
+            className={`flex flex-col lg:flex-row ${
+              isOpen ? "mt-16" : "mt-0"
+            } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}
           >
             {menuItems.map((item, index) => (
               <li
                 key={index}
-                onClick={() => handleScroll(item.id)}
+                onClick={() => handleScrollToSection(item.id)}
                 className="cursor-pointer group relative pt-4 lg:pt-0"
               >
                 <span className="relative group">

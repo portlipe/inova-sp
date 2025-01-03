@@ -8,20 +8,19 @@ const Footer: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (hasAnimated) return; // Impede a verificação se a animação já foi executada
+      if (hasAnimated) return; 
 
       const footerElement = document.getElementById("footer");
       if (footerElement) {
         const rect = footerElement.getBoundingClientRect();
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-          setHasAnimated(true); // Define que a animação ocorreu
+          setHasAnimated(true); 
         }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Limpeza do evento ao desmontar o componente
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
