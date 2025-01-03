@@ -4,26 +4,28 @@ import Logo_2 from "../media/Logo_2.svg";
 import Logo_zion from "../media/Logo_zion.svg";
 
 const Footer: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  // Função para verificar se o footer está visível
-  const handleScroll = () => {
-    const footerElement = document.getElementById("footer");
-    if (footerElement) {
-      const rect = footerElement.getBoundingClientRect();
-      setIsVisible(rect.top <= window.innerHeight && rect.bottom >= 0);
-    }
-  };
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    // Escuta o evento de scroll
+    const handleScroll = () => {
+      if (hasAnimated) return; // Impede a verificação se a animação já foi executada
+
+      const footerElement = document.getElementById("footer");
+      if (footerElement) {
+        const rect = footerElement.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          setHasAnimated(true); // Define que a animação ocorreu
+        }
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
 
-    // Limpeza do evento quando o componente for desmontado
+    // Limpeza do evento ao desmontar o componente
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [hasAnimated]);
 
   const menuItems = [
     { name: "Home", id: "hero" },
@@ -44,7 +46,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col">
           <div
             className={`transform transition-all duration-1000 opacity-0 ${
-              isVisible ? "opacity-100 translate-y-0" : "translate-y-20"
+              hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"
             }`}
           >
             <Image src={Logo_2} alt="logo_2" />
@@ -111,7 +113,9 @@ const Footer: React.FC = () => {
               alt="logo_zion"
               width={44.75}
               height={13.34}
-              className={`inline-block cursor-pointer transition-opacity duration-[3000ms] opacity-0 ${isVisible ? "opacity-100" : "opacity-0"}`}
+              className={`inline-block cursor-pointer transition-opacity duration-[3000ms] opacity-0 ${
+                hasAnimated ? "opacity-100" : "opacity-0"
+              }`}
             />
           </a>
         </p>
