@@ -46,7 +46,7 @@ const Header: React.FC = () => {
     <>
       <section
         id="header"
-        className={`fixed top-0 left-0 w-full h-[80px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full sm: h-[100px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${
           isOpen ? "bg-[#164772]" : "bg-white"
         }`}
       >
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
           <Image
             src={Logo}
             alt="logo"
-            className=" lg:w-[216px] sm: w-[168px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] lg:ml-[84px] sm: ml-[32px]"
+            className=" lg:w-[216px] sm: w-[148px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] lg:ml-[84px] sm: ml-[32px]"
             priority
           />
         </div>
