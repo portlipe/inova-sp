@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <ul className="space-y-8 lg:mt-0">
+            <ul className="space-y-8 sm: mt-2 lg:mt-0">
               <li>
                 <strong className="block mb-3">E-mail:</strong>{" "}
                 <a href="mailto:contato@inovasp.org" className="hover:underline">
