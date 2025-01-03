@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Rectangle from "../media/Rectangle_blue.svg";
 import Human_Target from "../media/human_target.svg";
