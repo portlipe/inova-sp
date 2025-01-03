@@ -11,21 +11,28 @@ const Services: React.FC = () => {
     const [openCardIndex, setOpenCardIndex] = useState<number | null>(null);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    useEffect(() => {
-        if (openCardIndex !== null) {
-            const targetCard = cardRefs.current[openCardIndex];
+    const handleCardClick = (index: number) => {
+        if (openCardIndex === index) {
+            // Fechando o card: scroll para o início
+            const targetCard = cardRefs.current[index];
             if (targetCard) {
                 const rect = targetCard.getBoundingClientRect();
                 const offset = window.pageYOffset || document.documentElement.scrollTop;
-                const top = rect.top + offset - 135;
+                const top = rect.top + offset - 130; // Ajuste o deslocamento conforme necessário
 
                 window.scrollTo({
                     top,
                     behavior: "smooth",
                 });
             }
+            setOpenCardIndex(null);
+        } else {
+            // Abrindo o card
+            setOpenCardIndex(index);
         }
-    }, [openCardIndex]);
+    };
+
+
 
     const cards = [
         {
@@ -177,9 +184,7 @@ const Services: React.FC = () => {
                                 alt={openCardIndex === index ? "Fechar Card" : "Abrir Card"}
                                 className={`lg:w-[54px] sm: w-[32px] cursor-pointer transform transition-transform ${openCardIndex === index ? "rotate-180" : "rotate-0"
                                     }`}
-                                onClick={() =>
-                                    setOpenCardIndex(openCardIndex === index ? null : index)
-                                }
+                                onClick={() => handleCardClick(index)}
                             />
                         </div>
 

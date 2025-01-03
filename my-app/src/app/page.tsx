@@ -30,7 +30,7 @@ const CookiePopup: React.FC = () => {
   if (!showPopup) return null;
 
   return (
-    <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 lg:right-0 lg:left-[47px] flex bg-opacity-90 z-50 sm:w-auto">
+    <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 lg:right-0 lg:left-[47px] flex bg-opacity-90 z-50 sm: w-auto">
       <div className="bg-white p-6 lg:w-[542px] lg:h-[245px] sm: w-[348px] sm: h-[158px] lg:px-[51px] border shadow-sm">
         <p className="text-center text-black lg:text-[18px] lg:leading-[29px] sm: text-[11px] sm: leading-[19px] lg:mb-8 sm: mb-4 lg:pt-[38px] font-redhat">
           Este site utiliza cookies para melhorar sua experiência e para
