@@ -144,7 +144,7 @@ const Services: React.FC = () => {
                     Nossos Serviços
                 </h1>
                 <p className="lg:text-[14px] lg:leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] font-redhat text-white lg:w-[853.17px] sm: w-[306px] mb-12 lg:mx-[293px]">
-                    Com uma equipe especializada, oferecemos soluções que tornam a tecnologia e a inovação ferramentas concretas de transformação.
+                    Com uma equipe especializada, oferecemos soluções que tornam a tecnologia e a inovação ferramentas concretas de transformação. Nossos serviços visam não apenas aprimorar a eficiência dos processos de gestão das organizações, mas também gerar um impacto positivo na vida das pessoas, promovendo uma gestão mais inteligente e orientada ao desenvolvimento da sociedade.
                 </p>
             </div>
 
