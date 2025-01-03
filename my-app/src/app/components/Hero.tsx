@@ -9,13 +9,13 @@ const Hero: React.FC = () => {
       {/* Vídeo de fundo para Desktop */}
       <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0 hidden lg:block">
         <source src="/videos/desktop.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        Seu navegador não suporta a tag de vídeo.
       </video>
 
       {/* Vídeo de fundo para Mobile */}
       <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0 block lg:hidden">
         <source src="/videos/mobile.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
+        Seu navegador não suporta a tag de vídeo.
       </video>
 
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-1"></div>
@@ -37,6 +37,7 @@ const Hero: React.FC = () => {
           height={117}
           className="object-cover"
           priority
+          unoptimized={true}
         />
       </div>
     </section>

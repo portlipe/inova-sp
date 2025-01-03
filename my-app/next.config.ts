@@ -9,12 +9,15 @@ const config: NextConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[hash].[ext]',
-          outputPath: 'static/videos/', // Caminho de saída para os arquivos de vídeo
+          outputPath: 'static/videos/',
         },
       },
     });
-
     return config;
+  },
+  output: 'export', // Adiciona o export
+  images: {
+    unoptimized: true, // Desativa a otimização de imagens
   },
 };
 

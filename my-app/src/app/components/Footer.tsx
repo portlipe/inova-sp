@@ -39,20 +39,18 @@ const Footer: React.FC = () => {
     <footer
       id="footer"
       className="w-full lg:h-[475px] sm: h-auto bg-[#0B2D44] text-white sm: py-8 lg:py-12"
+      aria-labelledby="footer-section"
     >
       <div className="max-w-[1135px] lg:ml-24 lg:px-0 grid grid-cols-1 lg:grid-cols-3 gap-8 sm: pl-[32px]">
         {/* Logo e descrição */}
         <div className="flex flex-col">
           <div
-            className={`transform transition-all duration-1000 opacity-0 ${
-              hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"
-            }`}
+            className={`transform transition-all duration-1000 opacity-0 ${hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"}`}
           >
-            <Image src={Logo_2} alt="logo_2" />
+            <Image src={Logo_2} alt="Logo Inova SP" unoptimized={true} />
           </div>
           <p className="text-[11px] mt-4 leading-[17px] font-redhat lg:w-[349px] sm: w-[289px]">
-            Atuamos para impulsionar instituições públicas e privadas por meio da
-            inovação, tecnologia, gestão estratégica e pesquisas avançadas.
+            Atuamos para impulsionar instituições públicas e privadas por meio da inovação, tecnologia, gestão estratégica e pesquisas avançadas.
           </p>
         </div>
 
@@ -68,6 +66,7 @@ const Footer: React.FC = () => {
                     if (section) section.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="cursor-pointer group relative pt-4 lg:pt-0"
+                  aria-label={`Navegar para ${item.name}`}
                 >
                   <span className="relative group z-10">
                     {item.name}
@@ -80,8 +79,8 @@ const Footer: React.FC = () => {
           <div>
             <ul className="space-y-8 sm: mt-2 lg:mt-0">
               <li>
-                <strong className="block mb-3">E-mail:</strong>{" "}
-                <a href="mailto:contato@inovasp.org" className="hover:underline">
+                <strong className="block mb-3">E-mail:</strong>
+                <a href="mailto:contato@inovasp.org" className="hover:underline" title="Enviar e-mail para contato@inovasp.org">
                   contato@inovasp.org
                 </a>
               </li>
@@ -106,15 +105,15 @@ const Footer: React.FC = () => {
             href="https://www.zionsoftwarehouse.com.br"
             target="_blank"
             rel="noopener noreferrer"
+            title="Visite o site da Zion Software House"
           >
             <Image
               src={Logo_zion}
-              alt="logo_zion"
+              alt="Logo da Zion Software House"
               width={44.75}
               height={13.34}
-              className={`inline-block cursor-pointer transition-opacity duration-[3000ms] opacity-0 ${
-                hasAnimated ? "opacity-100" : "opacity-0"
-              }`}
+              className={`inline-block cursor-pointer transition-opacity duration-[3000ms] opacity-0 ${hasAnimated ? "opacity-100" : "opacity-0"}`}
+              unoptimized={true}
             />
           </a>
         </p>

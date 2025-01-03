@@ -44,27 +44,20 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <section
+      <header
         id="header"
-        className={`fixed top-0 left-0 w-full sm: h-[100px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${
-          isOpen ? "bg-[#164772]" : "bg-white"
-        }`}
+        className={`fixed top-0 left-0 w-full sm: h-[100px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${isOpen ? "bg-[#164772]" : "bg-white"}`}
       >
-        {/* Logo */}
-        <div
-          className={`transform transition-all duration-1000 opacity-0 ${
-            hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"
-          }`}
-        >
+        <div className={`transform transition-all duration-1000 opacity-0 ${hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"}`}>
           <Image
             src={Logo}
             alt="logo"
-            className=" lg:w-[216px] sm: w-[168px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] lg:ml-[84px] sm: ml-[32px]"
+            className="lg:w-[216px] sm: w-[168px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] lg:ml-[84px] sm: ml-[32px]"
             priority
+            unoptimized={true}
           />
         </div>
 
-        {/* Botão Menu (Hambúrguer) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="block lg:hidden focus:outline-none pr-6"
@@ -95,11 +88,8 @@ const Header: React.FC = () => {
           </svg>
         </button>
 
-        {/* Navigation */}
         <nav
-          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${
-            isOpen ? "block" : "hidden"
-          } lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
+          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"} lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
         >
           <div className="flex items-center justify-between p-4">
             <Image
@@ -107,6 +97,7 @@ const Header: React.FC = () => {
               alt="logo_menu"
               className="w-[168px] mt-[17px] ml-8 p-0"
               priority
+              unoptimized={true}
             />
             <button
               onClick={() => setIsOpen(false)}
@@ -129,28 +120,22 @@ const Header: React.FC = () => {
             </button>
           </div>
 
-          {/* Menu Items */}
-          <ul
-            className={`flex flex-col lg:flex-row ${
-              isOpen ? "mt-16" : "mt-0"
-            } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}
-          >
+          <ul className={`flex flex-col lg:flex-row ${isOpen ? "mt-16" : "mt-0"} gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}>
             {menuItems.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => handleScrollToSection(item.id)}
-                className="cursor-pointer group relative pt-4 lg:pt-0"
-              >
-                <span className="relative group">
+              <li key={index} className="cursor-pointer group relative pt-4 lg:pt-0">
+                <a
+                  href={`#${item.id}`}
+                  onClick={() => handleScrollToSection(item.id)}
+                  className="relative group"
+                >
                   {item.name}
                   <span className="absolute inset-x-0 bottom-0 h-[1px] bg-white lg:bg-black transform scale-x-0 group-hover:scale-x-100 group-hover:translate-x-0 origin-left transition-all duration-300"></span>
-                </span>
+                </a>
               </li>
             ))}
           </ul>
         </nav>
-      </section>
-      {/* Ajuste para não "comer" a próxima seção */}
+      </header>
       <div className="h-[80px] lg:h-[149.12px]" />
     </>
   );

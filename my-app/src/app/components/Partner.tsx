@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Image from "next/image";
 import seta from "../media/seta.svg";
@@ -96,7 +97,7 @@ const Partner: React.FC = () => {
                 className={`absolute inset-y-0 right-4 flex items-center transform transition-transform duration-300 ${isSelectOpen ? "rotate-0" : "rotate-180"
                   }`}
               >
-                <Image src={seta} alt="seta" width={15} height={15} />
+                <Image src={seta} alt="seta" width={15} height={15} unoptimized={true} />
               </span>
 
             </div>

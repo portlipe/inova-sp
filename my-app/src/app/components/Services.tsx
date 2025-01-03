@@ -7,6 +7,7 @@ import Treinamentos from "../media/treinamentos.svg";
 import Pesquisas from "../media/pesquisas.svg";
 import Button from "../media/Button.svg";
 
+
 const Services: React.FC = () => {
     const [openCardIndex, setOpenCardIndex] = useState<number | null>(null);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -135,77 +136,80 @@ const Services: React.FC = () => {
     ];
 
     return (
-        <section
-            id="servicos"
-            className="w-full lg:min-h-screen bg-[#0B2B40] flex flex-col items-center justify-start text-center lg:px-4 lg:pb-32 py-[70px]"
-        >
-            <div>
-                <h1 className="sm: text-[50px] sm: leading-[50px] lg:text-[54px] leading-[66px] text-white mb-6 font-rajdhani font-medium">
-                    Nossos Serviços
-                </h1>
-                <p className="lg:text-[14px] lg:leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] font-redhat text-white lg:w-[853.17px] sm: w-[306px] mb-12 lg:mx-[293px] sm: mx-auto">
-                    Com uma equipe especializada, oferecemos soluções que tornam a tecnologia e a inovação ferramentas concretas de transformação. Nossos serviços visam não apenas aprimorar a eficiência dos processos de gestão das organizações, mas também gerar um impacto positivo na vida das pessoas, promovendo uma gestão mais inteligente e orientada ao desenvolvimento da sociedade.
-                </p>
-            </div>
+            <section
+                id="servicos"
+                className="w-full lg:min-h-screen bg-[#0B2B40] flex flex-col items-center justify-start text-center lg:px-4 lg:pb-32 py-[70px]"
+            >
+                <div>
+                    <h1 className="sm: text-[50px] sm: leading-[50px] lg:text-[54px] leading-[66px] text-white mb-6 font-rajdhani font-medium">
+                        Nossos Serviços
+                    </h1>
+                    <p className="lg:text-[14px] lg:leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] font-redhat text-white lg:w-[853.17px] sm: w-[306px] mb-12 lg:mx-[293px] sm: mx-auto">
+                        Com uma equipe especializada, oferecemos soluções que tornam a tecnologia e a inovação ferramentas concretas de transformação. Nossos serviços visam não apenas aprimorar a eficiência dos processos de gestão das organizações, mas também gerar um impacto positivo na vida das pessoas, promovendo uma gestão mais inteligente e orientada ao desenvolvimento da sociedade.
+                    </p>
+                </div>
 
-            {/*Cards*/}
-            <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm: max-w-[373px]">
-                {cards.map((card, index) => (
-                    <div
-                        key={index}
-                        ref={(el) => {
-                            cardRefs.current[index] = el;
-                        }}
-                        className={`relative flex flex-col bg-[#F2F2F2] rounded-md shadow-md text-left transition-all ${openCardIndex === index ? "h-auto" : "lg:h-[167px] sm: h-[190px]"} ${index === 0 ? "card-consultoria" : ""}`}
-                    >
-                        <div className="flex lg:pt-[46px] sm: pt-[35px] lg:pl-[45px] sm: pl-[10px]">
-                            <div className="relative flex items-center justify-center lg:w-[75px] lg:h-[75px] sm: w-[46px] sm: h-[46px] flex-shrink-0">
+                {/*Cards*/}
+                <div className="flex flex-col gap-[20px] w-full lg:max-w-[1135px] sm: max-w-[373px]">
+                    {cards.map((card, index) => (
+                        <div
+                            key={index}
+                            ref={(el) => {
+                                cardRefs.current[index] = el;
+                            }}
+                            className={`relative flex flex-col bg-[#F2F2F2] rounded-md shadow-md text-left transition-all ${openCardIndex === index ? "h-auto" : "lg:h-[167px] sm: h-[190px]"} ${index === 0 ? "card-consultoria" : ""}`}
+                        >
+                            <div className="flex lg:pt-[46px] sm: pt-[35px] lg:pl-[45px] sm: pl-[10px]">
+                                <div className="relative flex items-center justify-center lg:w-[75px] lg:h-[75px] sm: w-[46px] sm: h-[46px] flex-shrink-0">
+                                    <Image
+                                        src={Rectangle}
+                                        alt="Rectangle Blue"
+                                        className="absolute lg:w-[75px] lg:h-[75px] sm: w-[46px] sm: h-[46px]"
+                                        unoptimized={true}
+                                    />
+                                    <Image
+                                        src={card.image}
+                                        alt={card.title}
+                                        className="absolute lg:w-[47px] lg:h-[47px] sm: w-[26px] sm: h-[26px]"
+                                        unoptimized={true}
+                                    />
+                                </div>
+                                <div className={`flex-1 lg:pl-6 sm: pl-2 ${card.textWidth}`}>
+                                    <h3 className="lg:text-[26px] sm: text-[16px] font-extrabold font-redhat text-black">
+                                        {card.title}
+                                    </h3>
+                                    <p className="text-[#5E5E5E] lg:text-[14px] sm: text-[14px] font-redhat">
+                                        {card.description}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="absolute lg:top-[60px] sm: bottom-[12px] lg:right-[45px] sm: right-[10.5px]">
                                 <Image
-                                    src={Rectangle}
-                                    alt="Rectangle Blue"
-                                    className="absolute lg:w-[75px] lg:h-[75px] sm: w-[46px] sm: h-[46px]"
-                                />
-                                <Image
-                                    src={card.image}
-                                    alt={card.title}
-                                    className="absolute lg:w-[47px] lg:h-[47px] sm: w-[26px] sm: h-[26px]"
+                                    src={Button}
+                                    alt={openCardIndex === index ? "Fechar Card" : "Abrir Card"}
+                                    className={`lg:w-[54px] sm: w-[32px] cursor-pointer transform transition-transform ${openCardIndex === index ? "rotate-180" : "rotate-0"}`}
+                                    onClick={() => handleCardClick(index)}
+                                    unoptimized={true}
                                 />
                             </div>
-                            <div className={`flex-1 lg:pl-6 sm: pl-2 ${card.textWidth}`}>
-                                <h3 className="lg:text-[26px] sm: text-[16px] font-extrabold font-redhat text-black">
-                                    {card.title}
-                                </h3>
-                                <p className="text-[#5E5E5E] lg:text-[14px] sm: text-[14px] font-redhat">
-                                    {card.description}
-                                </p>
-                            </div>
+                            {openCardIndex === index && card.subtasks && (
+                                <div className="space-y-5 lg:ml-[141px] mt-4 lg:mb-[45px] sm: ml-[67px]">
+                                    {card.subtasks.map((subtask, subIndex) => (
+                                        <div key={subIndex} className={`mb-2 ${subtask.contentWidth}`}>
+                                            <h4 className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-extrabold text-[#5E5E5E] font-redhat">
+                                                {subtask.title}
+                                            </h4>
+                                            <p className="text-[#5E5E5E] lg:text-[14px] sm: text-[14px] lg:leading-[22.4px] sm: leading-[20.8px] font-redhat font-medium break-words">
+                                                {subtask.content}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
-                        <div className="absolute lg:top-[60px] sm: bottom-[12px] lg:right-[45px] sm: right-[10.5px]">
-                            <Image
-                                src={Button}
-                                alt={openCardIndex === index ? "Fechar Card" : "Abrir Card"}
-                                className={`lg:w-[54px] sm: w-[32px] cursor-pointer transform transition-transform ${openCardIndex === index ? "rotate-180" : "rotate-0"}`}
-                                onClick={() => handleCardClick(index)}
-                            />
-                        </div>
-                        {openCardIndex === index && card.subtasks && (
-                            <div className="space-y-5 lg:ml-[141px] mt-4 lg:mb-[45px] sm: ml-[67px]">
-                                {card.subtasks.map((subtask, subIndex) => (
-                                    <div key={subIndex} className={`mb-2 ${subtask.contentWidth}`}>
-                                        <h4 className="lg:text-[14px] sm: text-[13px] lg:leading-[22.4px] sm: leading-[20.8px] font-extrabold text-[#5E5E5E] font-redhat">
-                                            {subtask.title}
-                                        </h4>
-                                        <p className="text-[#5E5E5E] lg:text-[14px] sm: text-[14px] lg:leading-[22.4px] sm: leading-[20.8px] font-redhat font-medium break-words">
-                                            {subtask.content}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </div>
-        </section>
+                    ))}
+                </div>
+            </section>
     );
 };
 
