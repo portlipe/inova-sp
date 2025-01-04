@@ -7,16 +7,28 @@ const Hero: React.FC = () => {
     <section id="hero" className="relative w-full lg:h-[618px] sm: h-[518px] flex items-center justify-center bg-[#C2C2C2]">
       
       {/* Vídeo de fundo para Desktop */}
-      <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0 hidden lg:block">
-        <source src="/videos/desktop.mp4" type="video/mp4" />
-        Seu navegador não suporta a tag de vídeo.
-      </video>
+      <video
+          src="/videos/desktop.mp4"
+          width="100%"
+          height="100%"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 block"
+        />
 
       {/* Vídeo de fundo para Mobile */}
-      <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0 block lg:hidden">
-        <source src="/videos/mobile.mp4" type="video/mp4" />
-        Seu navegador não suporta a tag de vídeo.
-      </video>
+      <video
+          src="/videos/mobile.mp4"
+          width="100%"
+          height="100%"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover z-0 block lg:hidden"
+        />
 
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-1"></div>
 
