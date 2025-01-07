@@ -18,7 +18,7 @@ const Partner: React.FC = () => {
       <div className="lg:w-[1135px] md:w-[560px] sm: w-[367px] lg:h-[616px] sm: h-[685px] lg:py-[25px] lg:flex lg:flow-row lg:justify-between">
         {/* Texto da seção */}
         <div className="sm: flex flex-col lg:justify-center lg:items-left sm: text-center sm: mx-auto md:ml-[25px] lg:text-left lg:w-[387px] sm: w-[299px]">
-          <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] md:text-[64px] md:leading-[66px] md:w-[359px] font-medium text-white font-rajdhani md:ml-[90px] lg:leading-[51px] lg:pb-[35px] sm: pb-[15px] md:pb-[20px]">
+          <h1 className="sm: text-[40px] sm: leading-[40px] lg:text-[54px] md:text-[64px] md:leading-[66px] md:w-[359px] font-medium text-white font-rajdhani lg:ml-0 md:ml-[100px] lg:leading-[51px] lg:pb-[35px] sm: pb-[15px] md:pb-[20px]">
             Vamos inovar juntos?
           </h1>
           <p className="sm: text-[13px] lg:text-[14px] lg:leading-[22.4px] sm: leading-[20.8px] text-white font-redhat lg:w-[294px] md:text-[18px] md:leading-[25px] md:w-[520px] sm: w-[266px] sm: mx-auto lg:mx-0 lg:text-left sm: pb-[30px]">
