@@ -38,10 +38,10 @@ const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
-      className="w-full lg:h-[475px] sm: h-auto bg-[#0B2D44] text-white sm: py-8 lg:py-12"
+      className="w-full lg:h-[475px] sm: h-auto bg-[#0B2D44] text-white sm: py-8 md:py-4 lg:py-12 "
       aria-labelledby="footer-section"
     >
-      <div className="max-w-[1135px] lg:ml-24 lg:px-0 grid grid-cols-1 lg:grid-cols-3 gap-8 sm: pl-[32px]">
+      <div className="max-w-[1135px] lg:ml-24 lg:px-0 grid grid-cols-1 lg:grid-cols-3 gap-8 sm: pl-[32px] md:mt-8">
         {/* Logo e descrição */}
         <div className="flex flex-col">
           <div
@@ -98,8 +98,8 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Copyright */}
-      <div className="lg:mt-[110px] text-[12px] leading-[15px] font-redhat sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
-        <p className="flex items-center gap-2 pt-6">
+      <div className="lg:mt-[110px] text-[12px] leading-[15px] font-redhat lg:mt-[90px] sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
+        <p className="flex items-center gap-2 lg:pt-4 md:pt-6 sm: pt-6">
           Desenvolvido por
           <a
             href="https://www.zionsoftwarehouse.com.br"

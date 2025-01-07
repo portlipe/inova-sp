@@ -28,7 +28,7 @@ const AboutUs: React.FC = () => {
   return (
       <section
         id="instituto"
-        className="w-full lg:h-[618px] sm: h-[588px] flex flex-col lg:flex-row items-center relative overflow-hidden py-[70px]"
+        className="w-full lg:h-[618px] md:h-[1018px] sm: h-[588px] flex flex-col lg:flex-row items-center relative overflow-hidden py-[70px]"
         aria-labelledby="about-us-title"
       >
         {/* Coluna da imagem visível apenas em telas grandes */}
@@ -49,7 +49,7 @@ const AboutUs: React.FC = () => {
         {/* Imagem para telas menores */}
         <div
           id="flower-image-mobile"
-          className={`absolute top-[-90px] left-[90px] transform -translate-x-1/2 lg:hidden w-[740px] max-h-screen overflow-hidden transition-transform transition-opacity duration-[3000ms] ease-in-out ${
+          className={`absolute sm: top-[-90px] md:top-[-250px] md:left-[200px] sm: left-[90px] transform -translate-x-1/2 lg:hidden sm: w-[740px] md:w-[1550px] max-h-screen transition-transform transition-opacity duration-[3000ms] ease-in-out ${
             hasAnimated
               ? "opacity-100 translate-y-0 scale-100"
               : "opacity-0 translate-y-10 scale-95"
@@ -65,14 +65,14 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Texto */}
-        <div className="relative lg:max-w-[466px] sm: max-w-[321px] lg:ml-32">
+        <div className="relative lg:max-w-[466px] md:max-w-[628px] sm: max-w-[321px] lg:ml-32 md:space-y-[40px] md:mt-[130px] lg:pb-[150px]">
           <h2
             id="about-us-title"
-            className="sm: text-[50px] sm: leading-[62px] lg:text-[54px] lg:leading-[66px] font-medium text-black mb-3 font-rajdhani"
+            className="sm: text-[50px] sm: leading-[62px] lg:text-[54px] lg:leading-[66px] md:text-[70px] md:leading-[66px] font-medium text-black mb-3 font-rajdhani"
           >
             O Instituto
           </h2>
-          <p className="lg:text-[14px] lg:leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-black font-redhat">
+          <p className="lg:text-[14px] lg:leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] md:text-[25px] md:leading-[30px] text-black font-redhat">
             O Instituto INOVA-SP é dedicado a impulsionar as organizações por
             meio da inovação, tecnologia e gestão estratégica. Oferecemos uma
             ampla gama de serviços especializados, incluindo consultoria
@@ -82,7 +82,7 @@ const AboutUs: React.FC = () => {
             gestão das organizações, promovendo eficiência, transparência e
             desenvolvimento sustentável.
           </p>
-          <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] text-black mt-3 font-redhat">
+          <p className="lg:text-[14px] leading-[22.4px] sm: text-[13px] sm: leading-[20.8px] md:text-[25px] md:leading-[30px] text-black mt-3 font-redhat">
             Nossa missão é criar soluções sob medida para os desafios de hoje e
             antecipar as necessidades de amanhã. Com isso, trabalhamos para
             tornar a tecnologia um ativo poderoso que impulsiona o crescimento

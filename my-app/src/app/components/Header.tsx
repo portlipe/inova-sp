@@ -46,13 +46,19 @@ const Header: React.FC = () => {
     <>
       <header
         id="header"
-        className={`fixed top-0 left-0 w-full sm: h-[100px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${isOpen ? "bg-[#164772]" : "bg-white"}`}
+        className={`fixed top-0 left-0 w-full h-[100px] md:h-[130px] lg:h-[149.12px] flex items-center justify-between shadow-md z-40 transition-all duration-300 ${
+          isOpen ? "bg-[#164772]" : "bg-white"
+        }`}
       >
-        <div className={`transform transition-all duration-1000 opacity-0 ${hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"}`}>
+        <div
+          className={`transform transition-all duration-1000 opacity-0 ${
+            hasAnimated ? "opacity-100 translate-y-0" : "translate-y-20"
+          }`}
+        >
           <Image
             src={Logo}
             alt="logo"
-            className="lg:w-[216px] sm: w-[168px] sm: h-[64px] lg:h-[82px] lg:my-[33.35px] sm: my-[17px] lg:ml-[84px] sm: ml-[32px]"
+            className="sm: w-[168px] sm: h-[64px] md:w-[222px] md:h-[82px] lg:w-[216px] lg:h-[82px] sm: my-[17px] md:my-[25px] lg:my-[33.35px] sm: ml-[32px] md:ml-[50px] lg:ml-[84px]"
             priority
             unoptimized={true}
           />
@@ -89,7 +95,9 @@ const Header: React.FC = () => {
         </button>
 
         <nav
-          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${isOpen ? "block" : "hidden"} lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
+          className={`fixed top-0 left-0 w-full h-full bg-[#164772] z-50 transition-all duration-300 ease-in-out ${
+            isOpen ? "block" : "hidden"
+          } lg:static lg:w-auto lg:bg-transparent lg:z-auto lg:flex lg:items-center`}
         >
           <div className="flex items-center justify-between p-4">
             <Image
@@ -120,9 +128,16 @@ const Header: React.FC = () => {
             </button>
           </div>
 
-          <ul className={`flex flex-col lg:flex-row ${isOpen ? "mt-16" : "mt-0"} gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}>
+          <ul
+            className={`flex flex-col lg:flex-row ${
+              isOpen ? "mt-16" : "mt-0"
+            } gap-y-8 lg:gap-y-0 items-left ml-12 gap-x-10 text-white lg:text-black text-xs uppercase font-redhat font-semibold lg:w-full sm: w-[79px]`}
+          >
             {menuItems.map((item, index) => (
-              <li key={index} className="cursor-pointer group relative pt-4 lg:pt-0">
+              <li
+                key={index}
+                className="cursor-pointer group relative pt-4 lg:pt-0"
+              >
                 <a
                   href={`#${item.id}`}
                   onClick={() => handleScrollToSection(item.id)}
@@ -136,7 +151,7 @@ const Header: React.FC = () => {
           </ul>
         </nav>
       </header>
-      <div className="h-[80px] lg:h-[149.12px]" />
+      <div className="h-[80px] md:h-[120px] lg:h-[149.12px]" />
     </>
   );
 };

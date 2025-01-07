@@ -4,7 +4,7 @@ import HeroImage from "../media/hero.svg";
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="relative w-full lg:h-[618px] sm: h-[518px] flex items-center justify-center bg-[#C2C2C2]">
+    <section id="hero" className="relative w-full lg:h-[618px] md:h-[1018px] sm: h-[518px] flex items-center justify-center bg-[#C2C2C2]">
       
       {/* Vídeo de fundo para Desktop */}
       <video
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
       {/* Versão com texto para mobile */}
       <div className="lg:hidden flex items-center justify-center w-full h-full z-10">
-        <h1 className="max-w-[326px] max-h-[229px] text-[52px] text-white font-rajdhani font-semibold leading-[49.4px] flex items-left justify-center text-left animate-fade-in">
+        <h1 className="sm: max-w-[326px] sm: max-h-[229px] md:max-w-[350px] md:max-h-[750px] md:text-[80px] md:leading-[74px] sm: text-[52px] text-white font-rajdhani font-semibold sm: leading-[49.4px] flex items-left justify-center text-left animate-fade-in">
           Impulsionando organizações com
           Inovação, Tecnologia e Gestão
         </h1>
