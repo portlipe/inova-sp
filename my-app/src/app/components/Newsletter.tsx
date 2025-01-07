@@ -7,10 +7,10 @@ const Newsletter: React.FC = () => {
             className="w-full h-[460px] flex flex-col justify-center items-center sm: px-6 lg:px-8"
             aria-label="Seção de cadastro para a Newsletter"
         >
-            <h1 className="sm: leading-[40px] sm: text-[40px] lg:text-[54px] font-medium text-[#141414] lg:leading-[68.9px] font-rajdhani mb-4 text-center sm: px-[30px]">
+            <h1 className="sm: leading-[40px] sm: text-[40px] lg:text-[54px] font-medium text-[#141414] lg:leading-[68.9px] md:text-[64px] md:leading-[66px] font-rajdhani mb-4 text-center sm: px-[30px]">
                 Cadastre-se em nossa Newsletter
             </h1>
-            <p className="lg:text-[18px] lg:leading-[30px] sm: text-[12.8px] sm: leading-[18.8px] sm: w-[307px] font-normal text-[#141414] text-center lg:w-[581px] md:w-[411px] mb-6 font-redhat">
+            <p className="lg:text-[18px] lg:leading-[30px] sm: text-[12.8px] sm: leading-[18.8px] sm: w-[307px] md:text-[18px] md:leading-[25px] font-normal text-[#141414] text-center lg:w-[581px] md:w-[580px] mb-6 font-redhat">
                 Inscreva-se em nossa newsletter e acompanhe todas as novidades do nosso Instituto e do mercado de inovação e tecnologia.
             </p>
             <form
