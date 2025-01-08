@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Copyright */}
-      <div className="lg:mt-[130px] text-[12px] leading-[15px] font-redhat lg:mt-[90px] sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
+      <div className="lg:mt-[140px] text-[12px] leading-[15px] font-redhat lg:mt-[90px] sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
         <p className="flex items-center gap-2 lg:pt-4 md:pt-6 sm: pt-6">
           Desenvolvido por
           <a
