@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import HeroImage from "../media/hero.svg";
 
 const Hero: React.FC = () => {
   return (
