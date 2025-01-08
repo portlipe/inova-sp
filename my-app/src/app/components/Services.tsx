@@ -78,7 +78,7 @@ const Services: React.FC = () => {
             ],
         },
         {
-            title: "Palestras",
+            title: "Palestras e Workshops",
             description:
                 "Organizamos palestras com especialistas renomados para disseminar conhecimento e incentivar a adoção de práticas inovadoras.",
             image: Palestras,

@@ -4,14 +4,14 @@ const Newsletter: React.FC = () => {
     return (
         <section
             id="newsletter"
-            className="w-full h-[460px] flex flex-col justify-center items-center sm: px-6 lg:px-8"
+            className="w-full h-[460px] flex flex-col justify-center items-center lg:px-8 md:my-[80px]"
             aria-label="Seção de cadastro para a Newsletter"
         >
-            <h1 className="sm: leading-[40px] sm: text-[40px] lg:text-[54px] font-medium text-[#141414] lg:leading-[68.9px] md:text-[64px] md:leading-[66px] font-rajdhani mb-4 text-center sm: px-[30px]">
-                Cadastre-se em nossa Newsletter
+            <h1 className="sm: w-[324px] lg:w-full md:w-[500px] sm: leading-[40px] sm: text-[40px] lg:text-[54px] font-medium text-[#141414] lg:leading-[68.9px] md:text-[64px] md:leading-[66px] font-rajdhani lg:mb-[35px] md:mb-[30px] mb-4 text-center">
+                Faça parte da nossa Comunidade
             </h1>
-            <p className="lg:text-[18px] lg:leading-[30px] sm: text-[12.8px] sm: leading-[18.8px] sm: w-[307px] md:text-[18px] md:leading-[25px] font-normal text-[#141414] text-center lg:w-[581px] md:w-[580px] mb-6 font-redhat">
-                Inscreva-se em nossa newsletter e acompanhe todas as novidades do nosso Instituto e do mercado de inovação e tecnologia.
+            <p className="lg:text-[18px] lg:leading-[30px] sm: text-[12.8px] sm: leading-[18.8px] sm: w-[307px] md:text-[18px] md:leading-[25px] font-normal text-[#141414] text-center lg:w-[776px] md:w-[580px] lg:mb-[50px] md:mb-[45px] mb-6 font-redhat">
+                Conecte-se com uma comunidade engajada em inovação, tecnologia e transformação digital. Fique por dentro das novidades do nosso Instituto e das tendências que estão moldando o futuro.
             </p>
             <form
                 className="flex lg:flex-row items-center w-full sm: flex-col justify-center rounded-sm font-redhat"

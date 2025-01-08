@@ -65,7 +65,7 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Texto */}
-        <div className="relative lg:max-w-[466px] md:max-w-[450px] sm: max-w-[321px] lg:ml-32 md:space-y-[40px] md:my-auto lg:pb-[150px]">
+        <div className="relative lg:max-w-[466px] md:max-w-[450px] sm: max-w-[321px] lg:ml-32 md:space-y-[40px] md:my-auto lg:space-y-[20px]">
           <h2
             id="about-us-title"
             className="sm: text-[50px] sm: leading-[62px] lg:text-[54px] lg:leading-[66px] md:text-[64px] md:leading-[66px] font-medium text-black mb-3 font-rajdhani"
