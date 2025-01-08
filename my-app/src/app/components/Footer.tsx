@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
         {/* Navegação e dados */}
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[80px] sm: gap-8 font-redhat lg:pl-0 text-[13px] leading-[16px] lg:ml-[100px]">
           <div>
-            <ul className="space-y-8 flex flex-col">
+            <ul className="space-y-6 flex flex-col">
               {menuItems.map((item, index) => (
                 <li
                   key={index}
@@ -77,19 +77,19 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <ul className="space-y-8 sm: mt-2 lg:mt-0">
+            <ul className="space-y-6 sm: mt-2 lg:mt-0">
               <li>
-                <strong className="block mb-3">E-mail:</strong>
+                <strong className="block mb-1">E-mail:</strong>
                 <a href="mailto:contato@inovasp.org" className="hover:underline" title="Enviar e-mail para contato@inovasp.org">
                   contato@inovasp.org
                 </a>
               </li>
               <li className="whitespace-nowrap">
-                <strong className="block">Endereço:</strong> <br />
+                <strong className="block mb-[-8px]">Endereço:</strong> <br />
                 Av. Angélica, 2491 – 10º andar, sala 105 – São Paulo / SP
               </li>
               <li className="whitespace-nowrap">
-                <strong className="block">CNPJ:</strong> <br />
+                <strong className="block mb-[-8px]">CNPJ:</strong> <br />
                 45.895.492/0001-69
               </li>
             </ul>
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Copyright */}
-      <div className="lg:mt-[110px] text-[12px] leading-[15px] font-redhat lg:mt-[90px] sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
+      <div className="lg:mt-[125px] text-[12px] leading-[15px] font-redhat lg:mt-[90px] sm: mt-10 w-full flex flex-col items-center border-t-2 border-gray-600">
         <p className="flex items-center gap-2 lg:pt-4 md:pt-6 sm: pt-6">
           Desenvolvido por
           <a
