@@ -37,7 +37,7 @@ const Header: React.FC = () => {
     { name: "Home", id: "hero" },
     { name: "O Instituto", id: "instituto" },
     { name: "Serviços", id: "servicos" },
-    { name: "Newsletter", id: "newsletter" },
+    { name: "Faça Parte", id: "newsletter" },
     { name: "Associe-se", id: "partner" },
     { name: "Contato", id: "footer" },
   ];

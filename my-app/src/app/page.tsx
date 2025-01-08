@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
 import Header from "./components/Header";
