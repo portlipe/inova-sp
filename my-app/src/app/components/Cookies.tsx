@@ -26,39 +26,48 @@ const CookiePopup: React.FC = () => {
         try {
             // 1. Capturar informações do navegador e localização
             const res = await fetch("https://ipinfo.io/json?token=ec5e1e368842f7");
+    
+            console.log('Resposta do IPInfo:', res); // Verifica a resposta
+            if (!res.ok) {
+                throw new Error('Falha ao obter dados de localização');
+            }
+            
             const locationData = await res.json();
-
+            console.log('Dados de localização:', locationData); // Verifique os dados retornados
+    
             const browser = navigator.userAgent;
             const device =
                 /Mobi|Android|iPhone/.test(navigator.userAgent) ? "Mobile" : "Desktop";
             const screenResolution = `${window.screen.width}x${window.screen.height}`;
             const language = navigator.language || navigator.languages[0];
             const { city, region, country } = locationData;
-
+    
             // 2. Enviar os dados para o Google Forms
             const formData = new FormData();
-            formData.append("entry.1070889785", browser);
-            formData.append("entry.5191513", device);
-            formData.append("entry.661143868", screenResolution);
-            formData.append("entry.1864762848", language);
-            formData.append("entry.1297235944", city);
-            formData.append("entry.989832610", region);
-            formData.append("entry.1754868675", country);
-
-            await fetch(
-                "https://docs.google.com/forms/d/e/1FAIpQLSfg4Qen6OVowmra0erQ-a0x4U9mf6anp_9QSaH9sB9CoICQjw/formResponse",
+            formData.append("entry.1121593718", browser);
+            formData.append("entry.94950720", device);
+            formData.append("entry.1050691582", screenResolution);
+            formData.append("entry.1700647167", language);
+            formData.append("entry.1104564840", city);
+            formData.append("entry.1234493609", region);
+            formData.append("entry.1416471697", country);
+    
+            const response = await fetch(
+                "https://docs.google.com/forms/d/e/1FAIpQLSdEiidfPnscMQMmiQCU8TWUo5osJzjCFDqGl9zViE40srqqnQ/formResponse",
                 {
                     method: "POST",
                     body: formData,
-                    mode: "no-cors", // Necessário porque o Google Forms não responde com CORS
+                    mode: "no-cors",
                 }
             );
-
+    
+            console.log('Resposta do Google Forms:', response); // Verifique se a resposta é bem-sucedida
             console.log("Dados enviados com sucesso!");
         } catch (error) {
             console.error("Erro ao enviar os dados:", error);
         }
     };
+    
 
     if (!showPopup) return null;
 
@@ -84,7 +93,7 @@ const CookiePopup: React.FC = () => {
                     </button>
                 </div>
             </div>
-            
+
         </div>
 
     );
